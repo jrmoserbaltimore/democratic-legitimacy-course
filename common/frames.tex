@@ -1,0 +1,36 @@
+
+\pgfplotsset{compat=1.17}
+
+\tikzset{
+    titlebubble/.style = {
+        draw=gray,
+        thick,
+        fill=black,
+        text=white,
+        rectangle,
+        rounded corners,
+        right,
+        minimum height = .7cm
+    }
+}
+
+% A frame for example elections
+\makeatletter
+\newcounter{election}
+\mdfdefinestyle{election}{
+    outerlinewidth = 2,
+    outerlinecolor = blue!70!black,
+    roundcorner = 10pt,
+    leftmargin = 40,
+    rightmargin = 40,
+    backgroundcolor = yellow!40,
+    innertopmargin = \topskip,
+    splittopskip = \topskip,
+    settings={\global\stepcounter{election}},
+    frametitlefont=\sffamily\bfseries,
+    singleextra = { %
+       \node[titlebubble,xshift=1cm] at (P-|O) %
+       {\mdf@frametitlefont{Election \arabic{election}}};
+    }
+}
+\makeatother

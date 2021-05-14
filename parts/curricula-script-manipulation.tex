@@ -1,0 +1,242 @@
+\refstepcounter{syllabuslesson}
+\label{cur:manipulation}
+\section{Electoral Manipulation\hyperref[syllabus]{↑}}
+
+\begin{boxcomment}
+    It's disconnected from the rest, except insomuch as its logical relationship building on modes of collective decision and on the flaws that prevent voting from producing good outcomes and high equity, as well as to the concepts of representative democracy, government structure, and general democratic legitimacy which are predicated on voting actually being democratic.
+\end{boxcomment}
+
+Covers strategic voting, then strategic nomination.  This is where I weaponize the flaws in various systems.
+
+Strategic voting picks up from the Score Voting discussion, and brings up Approval voting as a scored system in which all scores are 1 or 0.  The propensity of voters to vote strategically when the utility of strategy increases is a direct point of focus, both for democratic legitimacy reasons and for the concern of whether the system is fair to voters.
+
+In plurality, voting for your favorite candidate always helps them win; however, this can cause your second favorite to lose when your favorite loses.  This is also true of instant runoff voting, as demonstrated in week 1.  Score systems exhibit similar:  because scores are always distributed, expressing any preference or admitting the approval of or any utility of a candidate helps that candidate defeat the voter's preferred candidates.  This puts voters under pressure, especially in close elections by approval or score:  by voting honestly, they are highly likely to elect a less-favored candidate when their favorite could win; yet by voting tactically, they may be able to win by majority, and if not then they may lose their vote entirely and only earn an even-less-favored candidate.  The closer an election, the more risk a voter faces when deciding whether or not to rate or approve a candidate.
+
+Condorcet systems suffer these failures when there is no Condorcet winner; and it is difficult in practice to use tactical voting to control the outcome, as it requires immense knowledge of all votes cast and control over a significant portion of the ballots.
+
+More interesting is strategic nomination.  As with tactical voting in score and approval rules, strategic nomination is exploited immediately in vulnerable systems.  Kiribati is a good example with the Borda count \autocite{Reilly2002}.  Strategic vote-splitting can affect IRV or plurality when used by candidates who understand the demographics sufficiently well.
+
+Candidates also manipulate the election by strategic campaigning.  In Maryland, candidates for Delegate will run on slates, allowing them to effectively pool votes.  Voters who like one candidate will often vote for the others endorsed by their favorite; a large enough group of voters dominates all others, and the whole slate is elected.  Similarly, candidates campaign in a party primary to cater only to the party voters they believe they need to win; they then campaign to attract swing voters, typically a more moderate stance.
+
+\subsection{Assigned Reading}
+
+\begin{todo}
+    Cite fun things like the government and a political party immediately hacking Borda count \autocite{Reilly2002} by strategic nomination to eliminate a popular opposition candidate.
+\end{todo}
+
+\subsection{Overview}
+
+\begin{todo}
+    Cover manipulating flaws in various elections.  This includes runnign to the party/running to the center in a party primary system; vote-splitting attacks on a general election or on a top-two primary; and slates in MNTV as used by Maryland for Delegate elections.
+
+    This is an apt place to describe the absolute hell that is Group Voting Ticket, where voters mark a party on their ballot and the party gets one ballot to fill out however they please for each voter doing so.  This allows parties to mathematically analyze the election and manipulate the outcome, as they have a large amount of knowledge about ballots as cast.  GVT is the ultimate form of tyranny feeding on ignorance.
+\end{todo}
+\begin{itemize}
+    \item Borda Count in Kiribati, using the highly-vulnerable Nairu method, was manipulated immeditaely.  It's a good case study as an opener, showing strategic nomination and strategic voting.
+
+    \item Robbie Robbinette's research on strategic campaigning to bracket strong candidates out of elections via instant runofff voting displays another avenue, based on the demographics knowledge of candidates and campaign managers.
+
+    \item Tactical voting is the weakest
+    \begin{itemize}
+        \item Tactical or ``sophisticated'' voting (sometimes called ``strategic'') is only successful when the voters obtain a benefit; vulnerability can be considered in how many votes must be altered, how much of a change can be made (e.g. how far from the Condorcet candidate can you move with how much difficulty), and likelihood of negative effects (is there real risk of electing a worse candidate instead of one the strategic voter likes more?)
+
+        \item Discuss in general the large amount of knowledge of other voters's votes required to manipulate resistant systems.
+
+        \item Group Voting Ticket (GVT):  largely eliminated, Australia used to use it.  Voters assign their ballot to a party, which can then file that number of ballots—giving a huge amount of precise knowledge regarding many ballots, and the ability to manipulate them at will.  GVT is concentrated evil.
+
+        \item Again, instant runoff voting is vulnerable to strategic nomination; but it is highly resistant to tactical voting.
+        \item Some systems are particularly vulnerable nonetheless, e.g. Borda, especially Nairu (tournament count is less vulnerable).
+
+        \item IRV is resistant primarily because every round of elimination is done without regard to further rankings, which creates a large cost.
+
+        \item Some systems force strategy:  score and approval voting help every candidate rated or approved, and in a close election this means voting honestly can turn a favored winner into a loser.  Ranked systems can fail in that way, but typically are more monotonic even when they are mathematically capable of failing in that way in certain situations.
+    \end{itemize}
+
+    \item A voting rule cannot be made more vulnerable by adding a Condorcet restriction, but can be made less vulnerable.
+    \begin{itemize}
+        \item Condorcet-Hare systems tend to be highly resistant to manipulation
+
+        \item Black's method (if there is a Condorcet winner then elect them, otherwise use Borda) or Smith-constrained Borda are much more resistant to strategy than Borda.
+    \end{itemize}
+
+    \item Elections can be manipulated by controlling the options
+    \begin{itemize}
+        \item Referendum where four options have a majority
+    \end{itemize}
+
+    \item Not all rules are well-researched
+    \begin{itemize}
+        \item Single Transferable Vote is immensely strategy-resistant; STV-B and Meek-Geller are much less researched, but may be resistant due to eliminating by weakness of Borda score but electing by strength of votes.
+
+        \item Black's is well-known, but Smith/Borda is not; although all Smith candidates generally have the same legitimacy
+
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{Particular Attacks}
+
+These attacks can be discussed in class as examples.  The instructor should be familiar with these systems and the various methods of manipulation.
+
+Tactical voting I usually consider infeasible, but it has a place in score systems and in Borda; Group Voting Ticket—where a voter checks a party and deposits their ballot, and that number of ballots are given to the party to fill out as they see fit—is the most concentrated evil, giving essentially one voter (an administrative entity) an enormous amount of knowledge about many votes because that voter is allowed to cast them.  Where GVT or straight-party ticket is used, these options are selected as high as 90\% of the time, which underscores how dangerous and destructive these are.
+
+\subsubsection{Binary Votes}
+
+Binary votes, such as are used in legislatures, can be easily manipulated.  Within legislatures, the best solution is k-majority with $k>50$.
+
+Consider the ballots in \prettyref{ele:pr-ref}.  Statehood is the Condorcet option; there is a cycle from Independence to Status Quo to Commonwealth.  The authority creating the ballot referendum can dictate the outcome by selecting any of these, for example by asking if Puerto Rico should become a Commonwealth or stay as is, the voters will vote Commonwealth; asking to decide between Commonwealth or Independence will select Independence.  This is most effective by pitching a Commonwealth as a greater stage of self-governence, as if it were a natural middle ground from the status quo, or effectively no change when placed next to Independence.
+
+\begin{figure}[ht]
+    \begin{election}
+        \label{ele:pr-ref}
+        Referendum on Puerto Rican Statehood
+
+        \begin{itemize}
+            \item 40: Statehood$\succ$Independence$\succ$Status Quo$\succ$Commonwealth
+            \item 35: Commonwealth$\succ$Independence$\succ$Statehood$\succ$Status Quo
+            \item 15: Status Quo$\succ$Statehood$\succ$Commonwealth$\succ$Independence
+            \item 10: Status Quo$\succ$Commonwealth$\succ$Independence$\succ$Statehood
+        \end{itemize}
+    \end{election}
+\end{figure}
+
+These ballots would produce a 75\% vote for Statehood using the question proposed in the real-life referendum, ``Should Puerto Rico be immediately admitted into the Union as a State?''  At the same time, it would receive a 75\% vote for Independence using the question, ``Should Puerto Rico be immediately recognized as an independent nation?''
+
+Despite the landslide vote for Independence, the question, ``Should Puerto Rico be recognized as a State of the Union or as an independent nation?'' would result in a 55\% vote for Statehood.  Likewise, asking only if Puerto Rico should become a Commonwealth would, assuming the above ballots, select the Status Quo.
+
+Only the last one would be readily recognized as a false choice.  A vote for Independence, without a vote for Statehood, would be assumed as a great shift in voter sentiment away from Statehood to an independent Puerto Rican nation.  A vote between Commonwealth and Independence may be interpreted as Puerto Ricans preferring the Status Quo and voting to build upon it with the move to a Commonwealth, despite Puerto Ricans opposing moving from Status Quo to Commonwealth.  This provides a great opportunity for propaganda from an election authority willing to manipulate the referendum by controlling the options on offer.
+
+In the example given, a 60\% supermajority vote would fail when voting for Statehood against Independence; while a 70\% supermajority vote would succeed when voting for Independence against the Status Quo.  This, as well, can be used to convince voters they really voted for Independence, so long as the vote between Statehood and Status Quo isn't presented for a vote:  voters will raise questions when both Statehood and Independence achieve a 70\% supermajority over Status Quo, but Independence is selected because only a 55\% simple majority select for Independence over Statehood.
+
+k-majority with $k>50$ works for legislation because bills are complex and legislators must negotiate over the details until the bill is acceptable to a supermajority body.  Legislation is always a complex question, although it can be considered as a variety of possible bills passing a supermajority, which can be placed into the framework of a Condorcet vote.
+
+\subsubsection{Plurality and MNTV}
+
+Everybody already knows plurality is easily manipulated by vote splitting.  Technically, this is done by running clones.
+
+Multiple Nontransferable Vote, used in Maryland's Delegate elections, is usually attacked by using a slate.  Each candidate associates themselves with another candidate on the slate, effectively pooling votes.  Candidates who appeal to different demographics draw in different voters by the virtue of being roughly similar and vouching for each other's similarity.
+
+MNTV can also be attacked by vote splitting, like plurality.
+
+\subsubsection{Instant Runoff Voting and Single Transferable Vote}
+
+Already demonstrated strategic nomination on Day 1.
+
+Robbie Robinette gave a presentation on forcing IRV to fail by campaign strategy, which exploits the same flaw.
+
+Single Transferable Vote is much more difficult to manipulate.  The flaw in IRV is contained to a narrower scope because of quotas and partial transfers of voting power.
+
+STV provides a chance of Woodall free riding, where a voter ranks an unpopular candidate first and their favorite second, hoping that other voters will elect their favorite in the first round and they will avoid a partial transfer, keeping their whole vote.  Meek's STV avoids this by computing the winners as if all eliminated candidates were eliminated before all elected candidates.  Meek's can protect agaist Hylland free riding, where a voter simply doesn't rank their favorite at all; Hylland carries more risk, as the candidate can more easily become unable to win.
+
+STV-B, or Geller-STV \autocite{Geller2005}, may provide better representation under STV.  Reduced to one winner at a $\nicefrac{1}{2}$ quota, or IRV-B, it shows resistance to tactical voting and strategic nomination.  This requires more research; two propositions show promise:
+
+\begin{itemize}
+    \item Eliminating a candidate earlier requires lowering them on the ballot, which means they are more likely to lose if a higher-ranked candidate on that ballot loses, making the outcome worse for the voter voting tactically
+
+    \item Higher-borda-score candidates will appear more often higher-ranked, so eliminating the winning candidate is either difficult because the original first loser is already low
+
+    \item Because of STV's severe strategic consequences for not ranking sufficient candidates, despite little if any advantage to ranking much more than $\nicefrac{n}{s}$ candidates for $n$ candidates and $s$ seats to elect, voters will maximize their vote by voting similarly under Geller-STV as they do under e.g. Meek-STV.
+
+    \item Voting similarly to other STV methods under Geller-STV should approach a generalization of Geller-IRV's convergence toward a Condorcet result.
+\end{itemize}
+
+Failures seem to elect the IRV winner when there is no Condorcet winner, similar to Smith/IRV.  This rule has not been studied enough, and it is not documented if this elects from the Smith set; it cannot be independent of Smith-dominated alternatives.
+
+IRV-B must satisfy mutual majority, as election is by vote count, and so the last candidate in the mutual majority set cannot be eliminated prior to election.
+
+IRV-B satisfies Condorcet Loser, as the Condorcet winner must have a higher Borda score than the Condorcet loser\footnote{Elizabeth Patitsas, 2007, Can the Borda Count ever rank the Condorcet loser ahead of the Condorcet winner?}.
+
+%It satisfies the Condorcet criteria because the Condorcet candidate must be in the mutual majority, the Condorcet candidate must have a majority vote count over others in the mutual majority, and the Condorcet candidate must gain more Borda count from outside the mutual majority than non-Condorcet candidates.  That is:  the Condorcet candidate must have the highest Borda count of the mutual majority candidates, but not necessarily the highest Borda count.
+
+%49 A>B>C>D  A=149 B=150 C=197 D=98
+%1 B>A>C>D
+%49 C>X>Y>Z>D>B>A  A=299 B=300 C=494
+%
+%49 A>B>C>D  A=149 B=150 C=197 D=98
+%49 B>A>C>D
+%1 C>X>Y>Z>D>B>A  A=299 B=300 C=686
+
+% Satisfies participation?  Not voting lowers the vote count for a higher candidate; voting raises the borda count for a higher candidate more than a lower candidate.
+
+%\begin{table}
+%    \begin{tabular}{|c|c|c|}
+%        \hline
+%        Count & Ballots & Borda Score \\
+%        \hline
+%        35 & $A\succ B\succ C$ & $A = 102$
+%        \hline
+%        32 & $B\succ A\succ C$ & $B = 132$
+%        \hline
+%        33 & $C\succ B\succ A$ & $C = 66$
+%        \hline
+%    \end{tabular}
+%    \caption{IRV elects A; IRV-B eliminates C, elects B.}
+%\end{table}
+%
+%\begin{table}
+%    \begin{tabular}{|c|c|c|}
+%        \hline
+%        Count & Ballots & Borda Score \\
+%        \hline
+%        35 & $A\succ C\succ B$ & $A = 102$ \\
+%        \hline
+%        32 & $B\succ A\succ C$ & $B = 97$ \\
+%        \hline
+%        33 & $C\succ B\succ A$ & $C = 101$ \\
+%        \hline
+%    \end{tabular}
+%    \caption{After tactical voting, IRV elects A; IRV-B eliminates B, elects A.}
+%\end{table}
+%
+%The third election shows risk.  If one voter shifts from the $A$ set to the $B$ set, the tactical manipulation elects $C$.  Both manipulations fail unless almost all $A$ voters raise $C$ above $B$.
+%
+%\begin{table}
+%    \begin{tabular}{|c|c|c|}
+%        \hline
+%        Count & Ballots & Borda Score \\
+%        \hline
+%        34 & $A\succ C\succ B$ & $A = 100$ \\
+%        \hline
+%        33 & $B\succ A\succ C$ & $B = 99$ \\
+%        \hline
+%        33 & $C\succ B\succ A$ & $C = 101$ \\
+%        \hline
+%    \end{tabular}
+%    \caption{Risk in tactical voting.}
+%\end{table}
+
+\subsubsection{Borda Count}
+
+Borda Count has an interesting property:  it may not elect the majority winner or the Condorcet winner.  Wikipedia has an example where Catherine is basically every voter's second choice and only a few voters's first choice; Andrew is the first choice of 51\% of voters; but Andrew is the \textit{last} choice of 49\% of voters.  This works for three candidates:  Borda elects Catherine.
+
+The obvious attack, when Andrew is expected to have a high Borda score, is to place Andrew at the bottom.  If the 49 voters prefer Andrew second and Andrew is moved from second to last place, Andrew becomes the loser.  This has a simple hazard:  there are all of four candidates, and the common second-place winner ends up winning unless this second-place winner is the last choice of Andrew voters, in this case David.  As with all strategic voting, this requires advanced knowledge of the opposite voting coalition.
+
+In practice, this manipulation is dangerous, but damaging even when unsuccessful.  Elevating Donald Trump, for example, makes Trump a much more likely electee.  This can be combined with a second attack:  strategic nomination.
+
+With Borda, under the Dowdall or ``Nauru'' system, each candidate at rank $n$ receives $\frac{1}{n}$ points.  In the more common tournament-style ranking, which is much less manipulable, for an election between $c$ candidates, each candidate at rank $n$ receives $c-n$ points, e.g. when there are five candidates, the top-ranked receives $5-1=4$ points, and the last receives $5-5=0$ points.
+
+With four candidates, a first-place candidate Alex on 51 ballots ranked last on 49 receives $3\times51=153$ points, and a candidate Bobbie ranked in second place on 49 and last on 51 ballots will receive $2\times49=98$ points or 64\% as many.  With eight candidates, these figures are $7\times51=357$ and $6\times49=294$, 83\% as many.  Borda count is heavily influenced by the presence of irrelevant alternatives.
+
+Adding non-running candidates and last-ranking the majority winner gives no points on those ballots last-ranking this winner, but brings the losers closer.  Consider if 27 ballots ranked Alex first and Bobbie second, and 49 ranked Bobbie second and Alex last.  With four candidates, this gives Bobbie $2\times76=152$ points.  With eight candidates, these figures are $7\times51=357$ for Alex and $6\times76=456$ for Bobbie:  the existence of irrelevant candidates elevates Bobbie to victory even if the first four rankings on every ballot are the same, except that Alex is moved to stay last on 49 ballots.  However, if Alex stays in fourth place, the total adds $4\times49=196$ for a total of 553; therefor this attack relies on the knowledge that voters will rank Alex last if given more options.
+
+There are a few possible defenses:
+
+\begin{itemize}
+    \item Restrict to the Smith set
+
+    \item Restrict to some number $c$ of candidates based on some criteria
+\end{itemize}
+
+Restricting to the Smith set makes the rule independent of Smith-dominated alternatives, and a Condorcet rule.  This has some merit, as seen in the ability of Borda to elect despite a majority preference:  it may select a better welfare candidate.  Manipulation is likely to be filtered out in Smith/Borda, but this is not a mathematical guarantee; on the other hand, its outcome can be no worse than any Smith-efficient method.
+
+Restricting to some number $c$ of candidates is more complex.  Using the top $c$ candidates ranked in the top $n$ ranks would tend to favor a plurality or majority coalition, for example a majority party.  Using the top $c$ borda scores may be more feasible.
+
+None of these is summable:  that a candidate appears at a particular rank or has a particular score does not reveal anything about the candidate's relative position versus any other candidate on any ballot.  Smith/Borda can be summed by not recalculating the Borda score, but this defeats much of the purpose.  All possible calculations can be computed, but this is not more compact than the ballots themselves.  Putting summability aside, either of these greatly restricts the strategic manipulability of the Borda count.
+
+\subsubsection{Quota Borda System}
+
+Quota Borda System is more reliable than Borda, but still relies on Borda scores and can be manipulated in the same way.  These manipulations elevate all higher-ranked candidates, so have less of an impact.
+
+QBS has some complexity and several pathologies.  Unlike Borda, the number of points awarded depends on how many candidates are ranked, which encourages voters to rank candidates between which they don't really differentiate—awarding points to candidates for whom the voter intends to award zero points, because to award zero points the voter must sacrifice points for their favorite.
+
+QBS doesn't provide much of an advantage because it's not summable.

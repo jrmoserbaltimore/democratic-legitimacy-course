@@ -1,0 +1,17 @@
+*\#
+*.swp
+*~
+*.pdf
+# *.tex
+*.synctex
+*.sav
+*.bak
+*.aux
+*.bbl
+*.blg
+*.log
+*.gz
+*.bcf
+*.xml
+*.out
+*.toc

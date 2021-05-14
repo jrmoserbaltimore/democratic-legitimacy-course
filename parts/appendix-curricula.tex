@@ -1,0 +1,148 @@
+
+\part{Curricula}
+
+%\input{parts/curricula-narrative}
+%
+%\begin{itemize}
+%    \item Undermine the student's fundamental beliefs about our democracy
+%    \begin{itemize}
+%        \item Democracy is a set of principles, not a process
+%
+%        \item We generally believe democracy means equal votes and majority rule
+%
+%        \begin{itemize}
+%            \item ``Most-votes wins'' sounds good, but isn't democratic
+%
+%            \item ``The Majority'' isn't real:  there are many majorities
+%
+%            \item A majority of representatives may represent a minority of voters
+%        \end{itemize}
+%
+%        \item Form of government and elections matter; ours are broken
+%        \begin{itemize}
+%            \item A representative democracy serves the voters, as we can't all be experts in everything
+%
+%            \item Representativeness is difficult, e.g. the two-tier problem
+%
+%            \item Early exclusion of voters, e.g. party primary elections, sounds good because ``a party can choose its nominee,'' but who said elections were about parties and not voters?
+%        \end{itemize}
+%    \end{itemize}
+%
+%    \item Democracy is an exercise in collective decisionmaking
+%    \begin{itemize}
+%        \item People don't prefer their fifth choice to their third choice, but a group of people might prefer their last choice to their first choice
+%
+%        \item There are many fundamental concepts of making group decisions
+%    \end{itemize}
+%
+%    % Day 2?
+%
+%    \item Democracy is about both consent and welfare
+%    \begin{itemize}
+%        \item Policy decisions help some, harm others, and may be beneficial as a whole (utilitarian)
+%
+%        \begin{itemize}
+%            \item Estlund, on social utility achieved by democracy \autocite{Estlund2008}
+%
+%            \item Green-Armytage, Tideman, Cosman showing a Condorcet winner—the preferential choice of the group—usually has high utility, close to the optimal utility winner \autocite{GreenArmytage2015}
+%        \end{itemize}
+%
+%        \item We believe a democracy must give equal power to everyone, and draws its legitimacy from the consent of the governed
+%        \begin{itemize}
+%            \item Condorcet claims either everyone has all rights or nobody has any rights
+%            \begin{itemize}
+%                \item Discussing the rights of women \autocite{Condorcet1789}
+%
+%                \item Condorcet's description of rights is consistent with his denouncement of slavery in ``Reflections on Negro Slavery'' \autocite{Condorcet1781}, in which he thoroughly establishes that slavery is merely a name for tyranny, and that people are not property and no law can make it so.
+%
+%                \item When the slave states gained $\nicefrac{3}{5}$ votes for each one slave, they gained only stolen voting power from people who could not speak to their representatives, could not vote themselves.
+%
+%                \item As Condorcet says, any ``who votes against the rights of another […] has by that fact abjured his own,'' and those who upheld slavery had at the very least no right to that representation in government, if they had not as well lost any right to their own.  Condorcet's ``Reflexion'' claims that as satisfying as it is to see the man selling people into slavery be himself put into the chains of slavery, this is also an injustice, and so it is with removing the democratic rights of those who supported slavery in the South—and nothing more, as while we may owe them their own rights, the rights of those enslaved do not belong to them, neither in whole nor in $\nicefrac{3}{5}$ the amount.
+%            \end{itemize}
+%        \end{itemize}
+%
+%    \end{itemize}
+%\end{itemize}
+
+\chapter{Syllabus}
+
+%Rough outline of the syllabus, covering what's done by week.
+%
+%The general approach is to introduce the student to social choice by a flood of shallow information that drastically alters their understanding of democracy on day one; discuss broad concepts underlying voting rules and manipulability of elections; discuss hard criteria for evaluating rules; discuss single- and multi winner rules; and then move into government structure and the various implications.
+%
+%Initial pass should be able to fit this into 7 weeks; that leaves room to expand on concepts, possibly expanding Tideman's collective decision taxonomy and frameworks on public choice into a more technical discussion.  A brief history of social choice—Borda, Condorcet, etc.—is possible; as is an examination of social choice around the world, including the theories underlying the Electoral College and the Congress, the use of Meek's Method of STV in New Zealand, parliamentary systems, Council-Manager versus elected mayor systems, and others.
+%
+%Useful resources include some of the readings from Urban Politics, notably the impact of at-large elections on minority voting power.
+%
+%Social choice history is vast and probably out of scope; however, a great many writings by the Marquis de Condorcet are highly-relevant.  Condorcet argued women were rational creatures capable of making moral decisions and, as this is probably what gives men the right to participate politically, either everyone has equal rights or nobody has them.  He also managed to abolish slavery in France in 1792, although Napoleon later reinstated it.
+%
+%While Condorcet was arguing that these things are nothing more than tyranny and that women and blacks were equal citizens with the equal right to vote in any legitimate society, the United States was allowing Southern States to count enslaved blacks as $\nicefrac{3}{5}$ of a person for apportionment of voting power in the House of Representatives despite having no right to vote, to speak to their representatives, to address grievances in court, or otherwise to be human beings.
+
+\newcounter{syllabuslesson}
+{
+\newcommand{\sylweek}[3]{
+
+    Week \ref{cur:#1} & \textbf{\hyperref[cur:#1]{#2}} \\
+    \hline
+    \multicolumn{2}{|X|}{\centering
+        #3
+    } \\
+    \hline
+}
+\begin{table}[h]
+    \label{syllabus}
+    \centering
+    \begin{tabularx}{\linewidth}{|c|c|}
+        \hline
+
+        \sylweek{what-is-sc}{What is Social Choice?}{What is choice?  What is social choice?  Why is it relevant today?}
+
+        \sylweek{ed-history}{Education, Knowledge, and a History of Social Choice}{Covers the role of knowledge and education in democratic governance.  Reviews the history of social choice thery.}
+
+        \sylweek{public-discourse}{Public Discourse and Good Collective Decisions}{The role of public discourse in democracy.}
+
+        \sylweek{collective-decisions-consent}{Collective Decisions and Consent}{Covers basics of collective decision procedures and consent to  Constitutional rules.}
+
+        \sylweek{majority}{Majority Rule and Preferential Voting}{Covers majority rule, preferential voting, tournament sets, and the democratic legitimacy implications thereof.}
+
+        \sylweek{ethics}{Ethics and Welfare}{Covers policy ethics, ethical voting, and the democratic legitimacy implications of voting.}
+
+        \sylweek{representative-democracy}{Representative Democracy}{Discusses the purpose and legitimacy of elected representation.}
+
+        \sylweek{single-winner-voting-rules}{Single-Winner Voting Rules and Elections}{Covers technical voting rule criterion for single-winner rules, and explores election structures.}
+
+        \sylweek{multi-winner-voting-rules}{Multi-Winner Voting Rules and Elections}{Covers multiple-winner rules, and further explores election structures.}
+
+        \sylweek{government-structure}{Government Structure}{Explores the structure of government and the interaction with social choice.}
+
+        \sylweek{evaluating-decision-methods}{Evaluating Decision Methods}{Explores decision methods in terms of efficiency, outcomes, equity, and other measures.}
+
+        \sylweek{manipulation}{Electoral Manipulation}{Demonstrates and discusses manipulating outcomes by tactical voting or strategic nomination.}
+
+        \sylweek{propaganda}{Investigating Propaganda}{An entire lesson debating and discussing propaganda from electoral system advocates.}
+    \end{tabularx}
+\end{table}
+}
+
+
+\begin{boxcomment}
+    Tideman and Green-Armytage explored selecting a runoff pair; Tideman (and I) both believe STV is the optimal primary, although Tideman recommends some adjustments to protect the Condorcet candidate, while I contend the Condorcet candidate cannot be identified because of ballot truncation with large numbers of candidates.
+
+    Current elections in the United States use party primary elections, top-two, or top-five (SNTV), with plurality or instant runoff voting in the general election.  Some use plurality-runoff instead of instant runoff.  Multi-member district elections often use MNTV party primaries followed by an MNTV general election.  The electoral college uses a completely different delegate voting structure.
+\end{boxcomment}
+
+\begin{boxcomment}
+    I'll move the two-tier problem to Representative Democracy.
+
+    I need to sequence majority before this and Ethics because it's fundamental under Preference and under Representative Democracy.  Ethics and Welfare brings up severe problems in majority rule regarding ethics, but then brings up welfare systems (score, borda).
+\end{boxcomment}
+
+%A compact outline:
+%
+%\begin{itemize}
+%    \item Welfare versus Preference elections (score vs. ranked) and ethical behaviors under scored systems \autocite{Baujard2014,Feddersen2009}
+%\end{itemize}
+
+\input{parts/curricula-script}
+\input{parts/curricula-assessment}
+\input{parts/curricula-cross-reference}

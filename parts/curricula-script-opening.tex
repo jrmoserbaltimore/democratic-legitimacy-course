@@ -1,0 +1,141 @@
+
+\refstepcounter{syllabuslesson}
+\label{cur:what-is-sc}
+\section{What is Social Choice?\hyperref[syllabus]{↑}}
+
+The first day opens with a crash course in the foundations of social choice and democratic ideals.  This lesson exposes the student to a broad array of concepts including the normative ideals and goals of democracy, the complicated definnition of a majority, the different outcomes and legitimacy of various voting rules and electoral processes, the decisions of how much to give up in terms of direct voting power versus the trust in specialized representatives to act in the voters's interest.
+
+This class will expand on what is shown here.  It will take months.
+\subsection{The Opening}
+
+The opener for this class uses a hostile debate technique:  the instructor, being opposite the students in the debate, uses knowledge about likely beliefs held by the students to lead them into statements open to severe and unanswerable rebuttals.  This gives the students the sense that they probably don't understand elections at all, and students in this class will find many difficult and disturbing questions to which they want answers.
+
+To begin, the instructor engages the students in a simple discussion about elections.  What is an election?  How do we decide who to elect?  There may be a lot of answers about voting; the goal is to coax the students into suggesting something about ``most votes'' or ``majority.''  This won't be difficult.
+
+\begin{boxcomment}
+    Occasionally a savvy student may enroll in the course.  Quickly assess at what level the student understands the topic:  some will be politically active with things like national popular vote or instant runoff voting, especially those who call IRV ``Ranked Choice Voting.''  Others, notably those who use the term ``Instant Runoff,'' are more likely broader read in social choice, and may profit more from the democratic legitimacy focus.
+
+    Students with basic understanding gathered from popular voting reform movements can drive debate.  Those with a high degree of preexisting knowledge can occasionally dominate the discussion; it may be worth privately asking them to try and keep the other students thinking rather than to give them all the answers.
+\end{boxcomment}
+
+Once the students have brought focus on the idea of majority rule—especially if they come up with the term ``the majority''—use \prettyref{ele:opener} to dig into questions surrounding most votes and majority.
+
+\begin{election}
+    \singlespacing
+    \label{ele:opener}
+    Consider the below set of 100 preferential ballots:
+    \begin{itemize}
+        \item 26 Alex$\succ$Bobbie$\succ$Chris
+        \item 25 Bobbie$\succ$Alex$\succ$Chris
+        \item 49 Chris$\succ$Bobbie$\succ$Alex
+    \end{itemize}
+
+    Pairwise, this breaks down into three elections:
+
+    \begin{itemize}
+        \item 51 Alex : 49 Chris
+        \item 74 Bobbie : 26 Alex
+        \item 51 Bobbie : 49 Chris
+    \end{itemize}
+\end{election}
+
+Present \prettyref{ele:opener} by describing transitive preference.  Descriptions such as ``you don't prefer your fifth choice to your third choice'' help convey this quickly.  Explain a familiar election as only allowing voters to express their first choice:  draw \prettyref{ele:opener} for the students and indicate all other choices are removed, such as by boxing the first preferences or by crossing out all further preferences.
+
+Point out that Chris received the most votes and wins the election; prompt the class about if this seems reasonable.
+
+\begin{boxcomment}
+    Some student will likely suggest that Chris didn't get a majority; coax the idea of a runoff out of them.  Just ask them how to deal with it; a runoff is the most likely answer.  If they come up with the Condorcet tournament approach, try to lead the discussion to multiple majorities.
+\end{boxcomment}
+
+Carry out the runoff to show Alex wins, with a majority over Chris, and ask the students if this seems fair.  Navigate the resulting conversation as necessary to break down the elections into pairwise races.  Use the concept of transitive preference to show that a single ballot indicates who the voter would choose between any pair of candidates, except that candidates not ranked are obviously preferred less than the \textit{last} ranked candidate, but preferences between them are unknown.  The voter ``didn't vote in those elections''—point out that this is not inherently bad and often immaterial, but that irrelevant alternatives are for another day.
+
+With the pairwise races, we can plainly see that both Alex and Bobbie are preferred by a majority over Chris; and also that a \textit{different majority} prefers Bobbie over Alex.  Emphasize that this majority is made up of different voters, a concept which should drive the students to think about what ``the majority'' and ``majority rule'' mean.
+
+Also point out that it is mathematically impossible for more than one candidate to have neither a majority nor a tie with \textit{any} other candidate, and so—barring ties—every candidates except one has a majority.  As an example, add a new candidate ``Dane'' to the election, second choice being Chris, and being the second choice of Chris voters.  This gives Chris a majority; however, Bobbie retains a majority over each opponent.
+
+This should produce debate around who should win, likely immediately drawing attention to Bobbie.
+
+Welcome to voting theory.
+
+\subsection{Script}
+
+\begin{boxcomment}
+    I avoid the discussion about direct vs. representative democracy, which comes into play in Week 7.  This has been removed from this section.
+\end{boxcomment}
+
+\begin{boxcomment}
+    Some of this will be expanded upon later; some is getting pretty deep into future topics, notably everything under ``what is a majority?''
+\end{boxcomment}
+
+\begin{todo}
+
+    I also removed party primary, which I might just put before \hyperref[cur:evaluating-decision-methods]{Evaluating Decision Methods} in a separate ``election structures'' week to cover different primary election cycles, runoffs, and the like.
+
+    The timing needs reevaluation.
+\end{todo}
+
+\begin{itemize}
+    \item What is democracy? [:20?]
+    \begin{itemize}
+        \item Is democracy a process or a set of princples? \emph{Kassner:  Is everything really up for grabs? \autocite{Kassner2006}}
+
+        \item Normative:  this course assumes democracy is a principle of self-rule based in popular sovereignty.  The philosophy discussed here generally supports that.
+    \end{itemize}
+
+    \item What is a majority? [:10-:15]
+    \begin{itemize}
+        \item What does ``most votes wins'' mean?
+
+        \item Plurality, majority, and Condorcet (Score voting comes later) [:07-:10]
+        \begin{itemize}
+            \item IRV demonstration showing different plurality, IRV, and Condorcet winners.
+        \end{itemize}
+
+        \item Two-tier example \autocite[p.125]{Heckelman2015} [:02-:05]
+        \begin{itemize}
+            \item 100 districts, 100 Senators, 100 voters per district
+
+            \item Majority of 51\% of Senators is 26\% of voters
+        \end{itemize}
+    \end{itemize}
+
+    \item When is voting democratic? [:35-:45]
+    \begin{itemize}
+%        \item Direct vs. representative democracy
+%        \begin{itemize}
+%            \item Direct democracy has huge economic costs, due to voters not being experts. [:08-:10]
+%            \begin{itemize}
+%                \item Knowledge \autocite[p.57]{Tideman2006}
+%            \end{itemize}
+%
+%            \item Representatives serve several purposes [:10-:15]            \begin{itemize}
+%                \item Moderate rapidly-changing voter sentiments (\emph{DOMA, Maryland's anti-insurrection bill});
+%
+%                \item Elite experts to traslate voter need into policy action;
+%
+%                \item Lead voters by the ideals they believe will most benefit them.
+%            \end{itemize}
+%
+%            \item Frequent, free, and fair elections allow voters to replace representatives as necessary.
+%        \end{itemize}
+
+        \item Recall the example election, in which any candidate can win depending on which voting rule is used.  Have studetns discuss who should and shouldn't win, and why.
+
+%        \item Party primary elections (\emph{Again, what is a majority?}) [:05-:10]
+    \end{itemize}
+
+\end{itemize}
+
+This leaves a large amount of time for additional discussion and debate.
+
+It's worth noting to students at the end that this course was originally intended to be a technical study, mixing in philosophy along the way; and instead, it shaped up to start with a good deal of philosophy, which then transitions into a heavily-technical study of elections and social choice.  These philosophical discussions will prepare students to defend democracy on its principles; and the technical end will show them the ways in which democracy must be defended physically from bad policy and undemocratic elections.
+
+\subsection{Traps}
+
+\begin{itemize}
+    \item Coaxing students into suggesting ``the majority,'' ``a majority,'' or ``the most votes'' to describe the correct winner, before showing that these are almost meaningless.
+
+    \item Leaving the question open for electing from three, after dismissing plurality, trying to lure students into suggesting a runoff to a majority.
+
+    \item Luring students into suggesting a Senate or City Council should vote on legislation by a majority of members, before laying out the two-tier problem.
+\end{itemize}

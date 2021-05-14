@@ -1,0 +1,197 @@
+\refstepcounter{syllabuslesson}
+\label{cur:multi-winner-voting-rules}
+\section{Multi-Winner Voting Rules and Elections\hyperref[syllabus]{↑}}
+
+This lesson introduces multi-winner districts and different multi-winner rules, including single non-transferable vote (SNTV), multiple non-transferable vote (MNTV), and single transferable vote.
+
+\begin{boxcomment}
+    Dr. Uzochukwu will likely appreciate the contrast between MNTV and STV; and Prof. Willis had brought up that multi-member districts were created as a tool to suppress black voters by multiplying the majority or even plurality vote for multiple candidates, something that can be replicated under single-member districts by careful district drawing but utterly fails under STV.  (We seriously need to get rid of MNTV, and Condorcet isn't good enough for this)
+\end{boxcomment}
+
+
+\subsection{Assigned Reading}
+
+\begin{itemize}
+    \item Chapter 17 of the Handbook of Social Choice and Voting \autocite[303-323]{Heckelman2015}
+\end{itemize}
+
+
+\subsection{Overview}
+
+Multi-winner elections:
+\begin{itemize}
+    \item Single non-transferable vote
+    \begin{itemize}
+        \item How SGA and Final Five operate
+        \item Not proportional, but a bit better than MNTV
+    \end{itemize}
+
+    \item Multiple non-transferable vote
+    \begin{itemize}
+        \item How Maryland elects delegates
+        \item Not proportional, basically plurality with bigger consequences
+    \end{itemize}
+
+    \item Serial Condorcet
+    \begin{itemize}
+        \item e.g. use Ranked Pairs and elect the first n-place winners
+        \item Not proportional; achieves multiple representation for a given population in the way of Condorcet winners
+    \end{itemize}
+
+    \item Single transferable vote
+    \begin{itemize}
+        \item How New Zealand elects some multi-member districts; also Scotland and several others
+        \item Proportional, due to vote transfers, breaking a population apart into like-minded voting coalitions wholly based on their votes
+        \item Easy to explain Meek's Method versus other methods
+    \end{itemize}
+
+    \item Geller-STV
+    \begin{itemize}
+        \item Single Transferable Vote, but eliminating by lowest Borda score
+
+        \item Has interesting properties, but isn't well-studied
+
+        \item Geller-IRV only elects the Condorcet winner from not more than three candidates
+        \begin{itemize}
+            \item Geller-IRV satisfies Mutual Majority because it elects by vote count, and eventually all but one mutual majority candidate has been eliminated.
+
+            \item Geller-IRV cannot elect the Condorcet loser for the same reason.
+
+            \item Geller-IRV must elect the Condorcet winner between three candidates because a Condorcet winner either has a simple majority or else can only exist if two intersecting majorities of ballots rank the Condorcet winner.  As a result, the Condorcet Loser must have a lower score than the Condorcet Winner, and so the Condorcet Winner cannot be eliminated first.
+
+            \item Geller-IRV may fail to elect the Condorcet winner with four candidates because ballots may be truncated, thus the Condorcet winner may have a lower Borda score than the Condorcet loser.
+
+            \item By contrast, Geller-IRV tends to elect closer to the Condorcet winner when more voters tend to rank more candidates.
+        \end{itemize}
+
+    \end{itemize}
+
+%14     A>B>C>D	A>B	    27 A>B        15 A
+%12     B>A>C>D	B>A	    23 B>A        19 A>B
+%25     C>B>A>D C>B>A>D 2  C>B>A>D    32 B>A
+%49     D>C>B>A D>C>B>A 49 D>C>B>A    19 C>B
+%                                     15 C
+%
+%A      91      91	    129           100
+%B      163     163	    176           102
+%C      199     173	    104           68
+%D      147     147	    147
+%El     A,D     A,D	    C,A
+%Win    C       C       B
+%Con    C       C       C
+%IRV    B,C;A   B,C;A   B/C
+%
+% The third example breaks the tie between two IRV winners.
+% Note in regular IRV, after C is eliminated, those voters are
+% part of the {B,A} mutual majority, of which B is the Condorcet
+% winner
+
+    \item Quota Borda System
+    \begin{itemize}
+        \item Inherits from Borda, but looking for a quota Borda score in the same way STV looks for a quota vote count
+
+        \item Not well-studied
+
+        \item Complex (enough so that maybe it should be skipped here)
+
+        \item Similar pathologies to Borda count, just as STV inherits from IRV
+    \end{itemize}
+\end{itemize}
+
+
+
+\subsection{Party primary issues}
+
+\begin{boxcomment}
+    Electoral systems and government structures overlap.  I define an electoral system as a social choice process using an ordered set of elections applying social choice functions, specifically voting rules.
+
+    Stages of electoral processes include registration, nomination, and runoffs.  The most well-known runoff in the United States is the general election following a ``primary'' nominating election.
+
+    One possible process has several stages:
+    \begin{itemize}
+        \item \textbf{Registration}:  Candidates file with the election authority, satisfying legal requirements in most jurisdictions to raise and spend money.
+
+        \item \textbf{Popular Nomination}:  Up until the registration deadline, candidates petition the public for signatures to support their candidacy.  Candidates reaching a threshold of signatures are nominated for office.
+
+        \item \textbf{Winnowwing}:  A series of runoff elections to select
+    \end{itemize}
+\end{boxcomment}
+
+\prettyref{ele:party-primary} describes an instant runoff voting failure mirrored by party primary.  This is also an argument used when dealing with FairVote's propaganda.
+
+\begin{figure}
+    \begin{election}
+        \singlespacing
+        \label{ele:party-primary}
+        Consider the below set of 100 preferential ballots:
+        \begin{itemize}
+            \item 26 Alex$\succ$Bobbie$\succ$Chris$\succ$Dane
+            \item 25 Bobbie$\succ$Alex$\succ$Chris$\succ$Dane
+            \item 20 Chris$\succ$Dane$\succ$Bobbie$\succ$Alex
+            \item 29 Dane$\succ$Chris$\succ$Bobbie$\succ$Alex
+        \end{itemize}
+
+        Pairwise, this breaks down into three elections:
+
+        \begin{itemize}
+            \item 51 Alex : 49 Chris
+            \item 51 Alex : 49 Dane
+            \item 74 Bobbie : 26 Alex
+            \item 51 Bobbie : 49 Chris
+            \item 51 Bobbie : 49 Dane
+            \item 71 Chris : 29 Dane
+        \end{itemize}
+        Consider voters have split into groups whose top two are ${Alex,Bobbie}$ and ${Chris,Dane}$.  If we call these Parties $X$ and $Y$, respectively, then Party $X$ nominates Alex and $Y$ nominates Dane, despite a majority of voters preferring the alternate candidate in each party.  Both party primary and instant runoff voting elect Alex in this case.
+
+        Although Bobbie is the Condorcet winner, once the party primaries remove Bobbie and Chris, Alex is the Condorcet winner among the \textit{remaining candidates}.  This can give the impression that IRV tends to elect the Condorcet winner when it is used in elections with party nominating primaries in a strong two-party system.
+    \end{election}
+\end{figure}
+
+This shows similar issues to the two-tier problem:  a party excludes other voters from its nominating process; registered voters of a majority party may be considered the only voters.  Those not voting in the primary may have no preference between party candidates, although the rational calculus of voting may apply, to the point that they may have little enough preference to rank them in a general election but not to bother voting in a party primary.
+
+When a party of 51\% of voters nominates the far extreme by 51\% of the party, the general election elects by 51\% of 51\% or 26.01\%.  Assuming all party electees are elected by like-minded voters, a Senate of 100 Senators of equal-sized districts is controlled by 51\% of that, or 13\%.
+
+There are two problems with this analysis.
+
+First, party voters are not like-minded, and have regional differences.  That 51\% is not one mind.  Second, U.S. Senate districts are not of equal size, so less-populus States in the 51\% may represent less than 10\% of voters in the Senate.
+
+Tideman, Green-Armytage, myself, and others have converged to Single Transferable Vote primary elections to nominate for a Condorcet general election.
+
+We have differences in opinions, e.g. Tideman and others suggest a modified STV to protect the Condorcet candidate from elimination, while I don't believe there's enough information to \textit{find} the Condorcet candidate.  In a practical sense, voters will have diverse opinions between 60 different options—we have seen this in a Delegate election by MNTV in District 40, with 20 candidates and 15 of them all had more than 10\% of the vote, and the highest vote count was barely over 20\%.  They won't rank more than 5 or 6, usually, and may not even understand them all due to the economics of investing time in learning about candidates.  The Condorcet candidate among the biggest coalition will be recognized as the Condorcet candidate among all voters, mathematically, due to low information.
+
+I favor Ranked Pairs; so did Tideman, until someone convinced him Minimax was about as good and simpler to understand.  I disagree:  describing Ranked Pairs is more engaging, and requires explaining each candidate's greatest win margin; Minimax requires explaining that for \textit{all} of each candidate's loss margins, we find the \textit{biggest} one, and then find the candidate who has the \textit{smallest} one of that.  Minimax can fail and elect the Condorcet loser when there is no Condorcet winner, so then you have to explain the Condorcet winner and the Smith Set as with Ranked Pairs, and restrict to the Smith Set.
+
+Mostly we're on the same page.
+
+Katherine Gehl prefers Final Five, which uses Single Non-transferable Vote to nominate five, then Instant Runoff Voting to elect one.  Japan's experience with SNTV was not great.  Instant Runoff Voting isn't summable and is considerably broken.  Gehl's explanation is that explaining voting systems is hard, and IRV and top-n (SNTV) are already popular and well-known—the lack of public understanding of social choice theory and voting theory is the impetus for this course, and this is a consequence of a lack of adequate public education.
+
+\begin{todo}
+    References for Japan:
+
+    G.W. Cox, F.M. Rosenbluth
+    Factional competition for the party endorsement: the case of Japan's Liberal Democratic Party
+    British Journal of Political Science, 26 (2) (1996), pp. 259-270
+
+    G.W. Cox, F.M. Rosenbluth
+    Electoral rules, career ambitions, and party structure: comparing factions in Japan's upper and lower houses
+    American Journal of Political Science, 44 (1) (2000), pp. 115-123
+
+    G.W. Cox, F.M. Rosenbluth, M.F. Thies
+    Electoral reform and the fate of factions: the case of Japan's Liberal Democratic Party
+    British Journal of Political Science, 29 (1) (1999), pp. 33-50
+
+    S. Reed
+    Strategic voting in the 1996 Japanese general election
+    Comparative Political Studies, 32 (2) (1999), p. 257
+
+    Japan: Manipulating Multi-Member Districts — from SNTV to a Mixed System
+    DOI 10.1057/9780230522749\_30
+
+    Manipulating Electoral Rules to Manufacture Single-Party Dominance
+    Kenneth Mori McElwain
+    American Journal of Political Science
+    Vol. 52, No. 1 (Jan., 2008), pp. 32-47 (16 pages)
+    Published By: Midwest Political Science Association
+\end{todo}
+
+That single-party dominance can be established by manipulating SNTV is troubling.  I must research this further.

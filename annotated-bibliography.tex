@@ -1,0 +1,65 @@
+% vim: sw=4 ts=4 et
+
+\documentclass[twoside,notitlepage]{report}
+
+\usepackage{hyperref}
+% UTF-8 input encoding
+\usepackage[utf8]{inputenc}
+% A little overdone, typically it's backend, style, annotatedBibliography,
+% and loadfiles
+\usepackage[
+    backend=biber, %biber usage is recommended
+    sorting=nyt, % sorting by name, year, and title
+    indexing=cite, %If you want to index cited authors
+    useeditor=false, %to keep sorting by title for edited works
+    style=reading, % The annotated style
+    annotation=true,
+%    minbibnames=2, %minimum and maximum authors cited in the bibliography (use of 'et al.')
+    maxbibnames=30,
+    loadfiles=true,
+]{biblatex}
+
+% Annotations will be in bibtex/annotations/{entrykey}.tex
+\renewcommand*{\bibannotationprefix}{bibtex/annotations/}
+\renewcommand*{\bibabstractprefix}{bibtex/abstracts/}
+% Page geometry
+\usepackage[
+    letterpaper,
+    inner=20mm,
+    outer=15mm,
+    top=20mm,
+    bottom=20mm
+]{geometry}
+
+\usepackage{units}
+% Avoids giant spacing between words in paragraphs when hyphenation looks sloppy
+\sloppy
+
+% Social choice theory references
+\addbibresource[label=social-choice]{bibtex/social-choice.bib}
+\addbibresource[label=philosophy]{bibtex/philosophy.bib}
+
+\defbibfilter{multi-member}{keyword={multi-member} or keyword={single transferable vote}}
+
+\begin{document}
+    % Include everything as if cited
+    % Typically \printbibliography only prints actually-cited works
+
+    \part{Sources by topic area}
+    % Breaking down into reference sections
+    \begin{refsection}[social-choice]
+        \nocite{*}
+        \printbibliography[title=Social Choice Theory]
+    \end{refsection}
+
+    \begin{refsection}[philosophy]
+        \nocite{*}
+        \printbibliography[title=Philosophy]
+    \end{refsection}
+
+    \part{Context-filtered sources}
+    \nocite{*}
+    \printbibliography[keyword={condorcet},title={Condorcet voting sources}]
+    \printbibliography[filter={multi-member}, title={Multi-member system sources}]
+    \printbibliography[keyword={score voting},title={Score voting sources}]
+\end{document}

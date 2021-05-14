@@ -1,0 +1,57 @@
+% vim: sw=4 ts=4 et
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+\usepackage{prettyref,varioref}
+\usepackage{units}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+%\usepackage{graphicx}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{pgfmath}
+\usepackage{tikz-qtree}
+%\usepackage{booktabs}
+%\usepackage{longtable}
+%\usepackage{supertabular}
+\usepackage{tabularx}
+%\usepackage{caption}
+\usetikzlibrary{arrows,shapes.geometric,automata,calc,positioning,shadows,trees}
+
+\usepackage{wrapfig}
+\usepackage[font={small,it}]{caption}
+
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tcolorbox}
+
+\input{common/colorboxes}
+
+\usepackage{enumitem}
+\usepackage[
+backend=biber,
+style=apa,
+annotation=false
+]{biblatex}
+\usepackage[
+letterpaper,
+inner=20mm,
+outer=15mm,
+top=20mm,
+bottom=20mm
+]{geometry}
+\sloppy
+
+%\makeatletter
+%\makeatother
+\newrefformat{fig}{Figure \ref{#1} \vpageref{#1}}
+\newrefformat{tab}{Table \ref{#1} \vpageref{#1}}
+\newrefformat{apx}{Appendix \ref{#1}}
+
+% Suppress "figure 0.1" stuff and get "figure 1"
+\counterwithout{figure}{section}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{section}
+\counterwithout{table}{chapter}

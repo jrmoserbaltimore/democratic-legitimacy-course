@@ -1,0 +1,118 @@
+
+% Skins: for frame styles and attaching box to top etc.
+\tcbuselibrary{skins}
+
+%\pgfplotsset{compat=1.17}
+
+\tcbset{
+    corner title/main style/.style={},
+    corner title/title style/.style={},
+    corner title/main/.style={/tcb/corner title/main style/.style={#1}},
+    corner title/title/.style={/tcb/corner title/title style/.style={#1}},
+    corner title/append main/.style={/tcb/corner title/main style/.append style={#1}},
+    corner title/append title/.style={/tcb/corner title/title style/.append style={#1}},
+    corner title/.style={
+        corner title/.cd, #1,
+        /tcb/.cd,
+        enhanced,
+        corner title/main style,
+        attach boxed title to top left={xshift=0.5cm, yshift=-12pt},
+        boxed title style={
+            outer arc=10pt,
+            arc=10pt,
+            top=3pt,
+            bottom=3pt,
+            corner title/title style,
+        },
+        top=12pt,
+    }
+}
+
+
+% A frame for example elections
+
+\newcounter{election}
+\newrefformat{ele}{Election \ref{#1}}
+\newtcolorbox{election}[1][]{
+    corner title={
+        main={
+            colframe = blue!70!black,
+            colback = yellow!40,
+        },
+        title = {
+            colback=black,
+            coltext=white
+        },
+    },
+    before title={\global\refstepcounter{election}},
+    before upper={\addtocounter{election}{-1}\refstepcounter{election}},
+    title={Election \arabic{election}},
+    fonttitle=\sffamily\bfseries,
+    #1,
+}
+
+\newtcolorbox{boxcomment}[1][]{
+        corner title={
+        main={
+            colframe = blue!70!black,
+            colback = gray!20,
+        },
+        title = {
+            colback=gray!80,
+        },
+    },
+    title={Note},
+    coltitle=black,
+    fonttitle=\sffamily\bfseries,
+    #1,
+    before upper={\singlespacing}
+}
+
+\newtcolorbox{todo}[1][]{
+    corner title={
+        main={
+            colframe = red!70!black,
+            colback = red!20,
+        },
+        title = {
+            colback=gray!80,
+        },
+    },
+    title={To Do},
+    coltitle=black,
+    fonttitle=\sffamily\bfseries,
+    #1,
+    before upper={\singlespacing}
+}
+
+\newtcolorbox{definition}[1]{
+    corner title={
+        main={
+            colframe = teal!70!black,
+            interior style = {top color=teal!05, bottom color=teal!25},
+        },
+        title = {
+            colback=blue!40,
+        },
+    },
+    title={Definition:  #1},
+    coltitle=black,
+    fonttitle=\sffamily\bfseries,
+    before upper={\singlespacing}
+}
+
+\newtcolorbox{commentary}[1]{
+    corner title={
+        main={
+            colframe = green!70!black,
+            interior style = {top color=lime!05, bottom color=lime!25}
+        },
+        title = {
+            colback=lime!40,
+        },
+    },
+    title={#1},
+    coltitle=black,
+    fonttitle=\sffamily\bfseries,
+    before upper={\singlespacing}
+}

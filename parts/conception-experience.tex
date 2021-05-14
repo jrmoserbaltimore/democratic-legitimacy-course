@@ -1,0 +1,135 @@
+% vim: sw=4 ts=4 et
+\chapter{Experience Leading to the Proposal}
+
+There are only two reasons to propose a new course:  either it's taught at other institutions, or the subject is important but not well known in the public mind.  The latter gave me the impetus to propose this course, not only to teach the subject matter, but to make it accessible to all students.
+
+This section answers not only why this course is necessary, but why \textit{I} determined it is necessary, what experiences brought the problem to my attention, and how it shaped my actions and drove me to make no small effort to do what needed doing.  It is not as simple as deciding something should be taught, but rather a matter of experiences.
+
+\section{Discovery}
+
+Around 2017, I took notice of efforts to establish instant runoff voting (IRV), a voting rule using preferential ballots to elect a single winner from multiple candidates, as the preferred single-winner voting rule across the United States.  Curious, I researched this on Wikipedia, and learned a lot about things I had never considered.  Condorcet winners and the Smith set, Arrow's theorem, concepts of majorities and mutual majorities, and voting rules like Schulze, ranked pairs (RP), and single transferable vote (STV) were all new concepts to me.
+
+My research brought me to the works of Nicolaus Tideman, James Green-Armytage, Markus Schulze, David Hill, Brian Meek, and others.  Much of these were opaque and confusing; and as I continued to research, I returned to these later and found I understood much of what I could not initially.
+
+Eventually, I began exploring voting methods myself.  I found mathematical flaws in IRV; I started developing electoral processes to resist manipulation and make every vote equal, or as close to equal as possible.  My information security background drew my attention toward any and every failure I could identify, searching for ways to force those failures, specifically by adding candidates based on voter demographics.  Flaws in computer programs can be exploited to force unintended outcomes; similarly, I found flaws in various voting rules could, in some cases, be weaponized to manipulate the outcome of an election.
+
+\section{Propaganda}
+
+Despite all this, the most popular proposal is instant runoff voting (IRV), advocated by FairVote.  The organization has used large amounts of deceptive propaganda to establish IRV as the most popular voting rule under consideration—practically the only rule under consideration.
+
+\subsection{Redefining Ranked Choice}
+
+FairVote initially committed itself to IRV, as shown in its 2009 Form 990:
+
+\begin{quotation}
+    \textit{Assisting implementation and consideration of instant runoff voting:}  FairVote is widely recognized as the leading national authority on instant runoff voting (IRV).  IRV is a powerful tool for accommodating increased choice in elections that has drawn the support of many civic leaders and major politicians like President Barack Obama and Sen. John McCain.  Since 2002 it has been adopted in such diverse cities as Minneapolis (MN), San Francisco (CA), Memphis (TN) and Oakland (CA).  In 2009, St. Paul (MN) adopted IRV.
+\end{quotation}
+
+The 2009 Form 990 doesn't use the term ``Ranked Choice Voting'' or ``RCV'', and mentions ``IRV'' a great many times.  This is in stark contrast to the 2010 Form 990:
+
+\begin{quotation}
+    \begin{itemize}
+        \item Establishing ranked choice voting (RCV, or ``instant runoff voting'') as a means to broaden voter choice while upholding majority rule, through research, education, advocacy (instantrunoff.com) and implementation assistance;
+
+        \item Researching alternatives to RCV such as the forms of the Top Two primary proposal adopted by voters in Washington State and California in recent years;
+    \end{itemize}
+\end{quotation}
+
+The above not only establishes ``ranked choice voting'' to mean IRV, but also ``alternatives'' to mean primary election cycles, presumably as an alternative to running no primary nominating election.  This is a common propaganda method, by which a general term is redefined as one of its specific forms so as to make it difficult and confusing to discuss or even think about other forms.  I avoid the term ``ranked choice voting'' and always indicate IRV by its proper name because of this propaganda.
+
+\subsection{Later-No-Harm}
+FairVote aggressively opposes Condorcet methods, including Smith/IRV, which is only instant runoff voting with constriction to the Smith set; when the Smith set contains one candidate, that is the Condorcet winner.  As of February, 2021, FairVote's own Web site contains a mix of weak propaganda and conflicting statements.
+
+\begin{quotation}
+    RCV is also one of the few methods that satisfy a property called later-no-harm, which we believe is necessary in the context of high-stakes, competitive elections. Namely, under RCV a vote for your second choice cannot hurt the chances your first choice will be elected; a vote for your third choice does not hurt the chances of your first or second choice; and so on. This is not true under approval, score, or Condorcet voting—a vote for a later choice works against an earlier choice. When a voting system violates later-no-harm, voters face pressure to bullet vote, meaning to cast a vote for only one's first choice.
+\end{quotation}
+
+In this example, they claim any method not satisfying later-no-harm is a no-go.  It is far from accepted that later-no-harm is desirable, although it sounds good to the naive.  FairVote fails to mention that when a Condorcet winner exists—when the Smith set is one candidate—voters's later choices have not harmed their favorites, but rather helped those down-ballot.  If these voters were to simply not rank the Condorcet winner, the winner would become a candidate they had \textit{not} ranked \textit{higher} than the original Condorcet winner.  Likewise, when the Smith set is more than one candidate, removing those candidates from the ballot (with or without removing any ranked lower) does not help elect their more-favored candidates, but rather makes a less-preferred candidate more likely to win.
+
+Condorcet methods only fail later-no-harm in practice when the Smith set is more than one candidate, could be reduced to fewer candidates by the voter not ranking one or more of the candidates in the Smith set, \textit{and} the ultimately elected candidate (which must remain in the Smith set) is more-favored by that voter.  This occurs rarely, mostly in mathematically-contrived situations, but it can occur.
+
+They fail to mention that IRV, like Condorcet methods, fails participation:  some voters can get a better result in some elections by not voting.  The same caveat as with later-no-harm applies to Condorcet; however, few votes identical to the affected voter's ballot are needed to reverse this.  In IRV specifically, a minority coalition's votes may be rendered moot if a mutual majority coalition exists and the minority coalition is larger than one-half the size of this mutual majority.
+
+This creates all kinds of problems for IRV.  A minority coalition must be smaller than $\nicefrac{1}{3}$ of the voters to \textit{possibly} affect the outcome, and smaller when the majority coalition is more unevenly divided between its two final runoff candidates; this gives said coalition limited voting power even when these conditions are met.  When the minority coalition exceeds this, it must turn out twice as many members to affect the outcome; and success means that instead of being disenfranchised, they fully disenfranchise what was, without the additional turnout, originally the majority coalition.
+
+Voting rules which elect the Condorcet winner, or which elect from the Smith set, also fail later-no-harm and participation.  A voter can only be potentially better off not voting if the Smith set is larger than one candidate, in which case not voting might break the cycle and make their favorite the Condorcet winner.  Even in such a situation, IRV typically enters its failure mode of electing an extreme and discarding the minority voters, and the outcomes satisfy voters as such:
+
+\begin{itemize}
+    \item The voters preferring the extreme opposite the candidate IRV elects are more satisfied with the Condorcet winner than the IRV winner (who is likely their least-favorite);
+
+    \item The voters preferring the candidate IRV elects are less satisfied with the Condorcet winner, but less dissatisfied than if the opposite candidate had won;
+
+    \item The voters close to the median are most satisfied with the Condorcet winner or a member of the Smith set (when it does not contain the IRV winner) than they are with any candidate outside the Smith set.
+\end{itemize}
+
+This is because IRV fails what might be called ``earlier-no-harm'' in that given a winning candidate, ranking a losing above this winner may cause the winner to also lose, and a less-preferred candidate to win.  For any group of voters whose votes are transferred to a certain candidate, that group of voters cannot influence the election further unless either that candidate is elected \textit{or} some other candidate has more votes, but not yet a majority.
+
+This manner of disenfranchisement increases the dissatisfaction of both the coalition favoring the more-extreme candidate \textit{and} that of the median voter coalition; perversely, part of the median voter coalition prefers the ultimate winner to the remaining candidate, and so supplies the ultimate majority vote even as IRV strips them of their vote.  In total, a majority of voters are made less-satisfied by this property Fairvote claims as critically important.
+
+\subsection{Deceptive Definition of Majority and Moderate}
+
+An election between three candidates is conceptually two one-on-one elections.  In practice, it may very well be that Candidate A and B are the \textit{only} candidates, and Candidate A has a majority; then, by adding Candidate C, we would cause Candidate B to win.  I use examples of this when explaining the Condorcet principle.
+
+Under a Condorcet system, if Candidate B would win the election between B and C, and would win the election between B and A, and so forth in every pairwise election between B and every other candidate presented, then Candidate B is elected.  Mathematically, every candidate except one—and possibly zero—must have a majority or else be tied with another.
+
+FairVote provides an interesting explanation of the Condorcet failure and why it is superior to fail Condorcet in the Burlington election:
+
+\begin{quotation}
+    The problem is that in football, each game is inherently a one-on-one contest – not the case with elections.  Voters must consider a full range of candidates before casting their ballot, and candidates compete for votes with more than one opponent. If there is a Condorcet winner, it means that he or she is preferred to every other candidate—not necessarily liked more than other candidates and not necessarily ready to represent the constituents.
+
+    Let me explain. If candidate A beats both B and C, that candidate is preferred to both of them by a majority of voters. That doesn’t mean that he is liked more than them, or even at all—very conceivably, it could mean that he is simply disliked less. Condorcet winners are centrist by nature, regardless of the preferences of the electorate. In modern political terms, they are embodied by conservative Democrats, liberal Republicans, and centrist independents like Joe Lieberman.
+
+    […]
+
+    Agreeing that the Condorcet criterion is desirable is equivalent to saying that moderate candidates should always win. But despite the hand-wringing over increasing partisanship and polarization, there are cases where more off-center candidates are deserving of election, no matter how much one might hate their policies. Any election system that favors extremists would be considered unreasonable; the same rationale must be applied to moderates.
+
+\end{quotation}
+
+The assertions made by FairVote are not distinct from saying that if Candidate C did not exist, Candidate A should not be elected despite gaining a majority over Candidate B.  This is embedded in their own explanation of the Condorcet winner, as what they suggest is only logically possible if the presence of a third candidate changes the winner.  In effect, they suggest that it's okay for any candidate except the Condorcet loser (a candidate defeated by all others) to win, and the election should be a dice roll.
+
+``Claiming the candidate is not necessarily liked more than other candidates'' raises the question:  liked by who?  The earlier examination of dissatisfactions shows that the selection of some other candidate than the Condorcet candidate picks a candidate \textit{disliked more} by a majority of voters, but liked more by some minority of voters.  This is what FairVote says is better and proper.
+
+FairVote also uses a false equivalence of electing moderates and electing the Condorcet winner, and falsely equivalates ``centrist'' with ``moderate.''  The last claim, that an election system favoring extremists (as IRV does) or moderates must be considered unreasonable, is the strange claim that favoring extremists is the same as favoring moderates\footnote{Check the handbook; this is a formal fallacy, I'm pretty sure.}.  The paragraph omitted above reads as follows:
+
+\begin{quotation}
+    Consider an election with three candidates: a strong liberal who commands between 40\% to 50\% of the vote, a moderate with about 10\% to 15\%, and a strong conservative between 40\% and 50\%. By being everyone’s second choice, the moderate will certainly be the Condorcet winner as long as neither of the two more extreme candidates earns a majority of the vote. If the electorate is moderate, then great—the Condorcet winner makes sense. But if the electorate mostly wants something to the left or right of the center, is it still the case that the moderate should always win? Wouldn’t the 80\% to 90\% of voters who lean clearly to one side prefer that their candidate have a nonzero chance of winning, as opposed to the impossibility of victory under Condorcet methods?
+\end{quotation}
+
+Those ``80\% to 90\%'' are comprised of the minorities on opposing sides, meaning they sure as hell prefer that the \textit{other} side's candidate has a zero chance of winning.  FairVote is using the term ``moderate'' in place of what is more correctly ``centrist'' and, like many, equating the two terms.
+
+The winner is centrist by definition, being centered around a median voter.  ``Centrist'' only sensible in the context of a body of voters; while ``moderate'' describes a political ideology in relative terms.  If the voting body is Montgomery County, the median voter—the ``centrist'' if we were to consider only Montgomery County—has what we would call in Maryland or the United States a strong progressive lean; in Carroll County, the centrist has a fairly conservative lean.  These ``progressive'' and ``conservative'' leans are relative to the ``centrist'' of the entire ideological body of the United States, which is typically termed ``moderate.''
+
+
+%No Condorcet method fails latter-no-harm, IIA, monotonicity, or any other criterion when a Condorcet winner ultimately exists.  In cases where there is no Condorcet winner, as the resolution algorithms must pick between what is effectively a tie.  One possible approach, Smith/IRV, is to simply eliminate all candidates outside the Smith set—the smallest set of candidates which are defeated by or tied with no candidates outside the set—and then carry out IRV.  Importantly, a Condorcet method may elect \textit{any} candidate if no Condorcet winner exists; most are Smith- or Schwartz-efficient, and any that initially restricts to the Smith set is independent of Smith-dominated alternatives.
+%
+%While different methods have different philosophical ideals behind them, such as avoiding candidates with large defeats or electing what appears to be the strongest candidate by some measure, they achieve much weaker democratic legitimacy under the normative assumption of majority preference.  A Condorcet winner concretely has \textit{a majority} over \textit{each and every presented alternative}.  Without a Condorcet candidate, a method can at best select from a set of candidates who each have \textit{a majority} over \textit{each and every presented alternative not in the set} and tie with or have a majority over one or more alternatives \textit{within} the set.  In this sense, you could draw a circle around the Smith set, treat it as one ``candidate'', and it would be the Condorcet winner—any single candidate within the set, when excluding all others, is the Condorcet winner.  Smith-efficient methods essentially perform this exclusion of all but one by arbitrary means.
+
+
+FairVote indicates moderates can win under IRV, ``But having them always win would not reflect the fact that sometimes a city, state or country wants leaders who want to transform the center, to move voters their way, like a Franklin Roosevelt or a Ronald Reagan.''  This statement is completely inconsistent with their position:  if the collectivity of the electorate actually wanted an FDR or a Reagan, they would have voted that way, making that candidate the Condorcet winner; if the candidate isn't even in the Smith set, then the result is a minority seizing power over all majorities, as every candidate in the mith set is preferred by a majority to the non-Smith candidate FairVote claims should be elected.  That directly contradicts majority rule, insofar as all candidates except \textit{maybe but not necessarily} one must have a majority over \textit{some} candidate, and so we can elect \textit{any} candidate by adding another option who simply does not campaign and loses to everyone, and then claiming they have a majority and electing them arbitrarily.  The Condorcet criterion and Smith-efficiency in general are the natural answer to the questions raised by this proposition.
+
+\subsection{It's Good and It's Bad}
+
+FairVote also claims the following:
+
+\begin{quotation}
+    We also consider the Condorcet criterion to be important. This is the property that the candidate that would win a head-to-head race against every other candidate should always win. While RCV, approval, and score voting may fail to elect the Condorcet candidate, in practice RCV has done so in virtually every single election. Due to strategic vulnerabilities of Condorcet methods, including later-no-harm, and the additional complexity Condorcet requires to resolve cycles, we strongly prefer RCV for political elections.
+\end{quotation}
+
+Their main assertion here is that IRV is a better Condorcet method than actual Condorcet methods, and that Condorcet methods must have strategic vulnerabilities to which IRV is immune.  Tideman proves adding a Condorcet rule to any existing rule cannot increase strategic vulnerability \autocite{Tideman2019}; I suspect the same applies to adding a Smith set constraint, such as in Smith/IRV.  In either case, FairVote is wrong here in the most obvious way.
+
+Failing later-no-harm is not a strategic vulnerability, and IRV's strategic vulnerability stems from satisfying later-no-harm.  IRV's vulnerabilities are more easily exploitable, both by strategic nomination (adding a candidate) and strategic campaigning\footnote{Robbie Robinette has a working paper on this.}.  Despite being vulnerable to strategic nomination, FairVote claims IRV is immune to vote-splitting, which is the same attack.
+
+The assertion that RCV has elected the Condorcet candidate in every election is patently useless.  When given only two viable candidates, such as in American elections following a party primary or top-two cycle, the Condorcet winner will always be one of the two major party candidates, and a cycle will never occur.  The primary election cycle has certain characteristics that make this a practical reality.  The main failure for which FairVote has to answer is the Burlington, VT 2009 Mayoral Election\footnote{\url{https://www.fairvote.org/why-the-condorcet-criterion-is-less-important-than-it-seems}}; this city has a powerful and viable third party, which creates \textit{exactly} the conditions in which IRV fails, and can theoretically be manipulated if your strategically-planted spoiler candidate can win the target party's primary election.
+
+\subsection{Other Organizations}
+Similar propaganda comes from the Center for Election Science, Center for Range Voting, and other advocates of score voting methods.  In one case, I directly proved that score voting violates Arrow's impossibility theorem, notably independence of irrelevant alternatives (IIA), which shouldn't even apply because Arrow's only applies to preferential voting systems.  The problem here is score-based systems must have bounded range or else voters have infinite voting power simply by putting infinitely-high scores for their favorite candidates.  As such, if even one voter in a given election gives a candidate the maximum score, addition of a candidate who that voter scores higher requires down-rating their top candidate, which can cause some third candidate to win the election.  As there is no absolute scale for social utility, this must rationally always be the case.
+
+\subsection{Education}
+
+Marie Jean Antoin Nicolas de Caritat, Marquis de Condorcet had much to say on education, the focus of Yastrebseva's 2015 research investigating Condorcet's public education doctrines in the context of women's rights and slavery \autocite{Yastrebtseva2015}.  She summarizes, ``As a social institution, school is a means of introduction to rationality, without which it is impossible to establish a civil society but only tyranny feeding on popular ignorance,'' citing Condorcet's statement that ``education inequality is one of the main sources of tyranny.''
+
+Knowledge of social choice and public choice is uncommon, and the things I had observed were surprising and confusing to almost everyone.  Even social choice theorists seemed uncertain about some my observations:  most theorists are concerned with single-winner elections and their representativeness and resistance to tactical voting; I'm interested in practical concerns of likely outcomes, whether voters can reliably rank so many candidates in one election, and resistance to strategic nomination.
+
+Without broad understanding of these topics, the academic community becomes small and cannot effectively generate new ideas.  The public at large cannot evaluate policy without the requisite knowledge, and calls for new electoral methods are driven by obvious unrepresentative results combined with propaganda by ideological groups who often also don't know what they're doing.
+
+Given the propaganda, the popularity of a national popular vote proposal, the growing support for instant runoff voting, implementation of various types of dysfunctional primary elections such as top-two in California, the lack of public outcry against \textit{party} primary elections for blindingly-obvious violations of democratic principles, and a great deal of things I can only see because I've consumed an enormous amount of specialized knowledge, I can only assume people without an education encompassing social choice concepts will remain ignorant of whether their democracy is actually democratic.  Tocqueville's tyranny of the majority\footnote{TODO: cite} may be unintentional, but it is still tyranny feeding on ignorance.

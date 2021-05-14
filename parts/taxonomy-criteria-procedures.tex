@@ -1,0 +1,36 @@
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[
+        %sibling distance=10em,
+        font=\small,
+        edge from parent path={(\tikzchildnode.north) -- ++(0,0.5cm)
+            -| (\tikzparentnode.south)},
+        level distance=1.75cm,
+        every node/.style = {
+            shape=rectangle, rounded corners,
+            draw=blue!75,
+            align=center,
+            top color=white,
+            bottom color=blue!20,
+            drop shadow}
+        ]
+
+        \draw (0,0) [sibling distance=15em] node {Evaluation Criteria}
+        child { node {Efficiency}
+            [sibling distance=5em] child { node {Outcome\\Efficiency} }
+            child { node {Procedural\\Efficiency} }
+        }
+        child { node {Equity}
+            [sibling distance=6em] child { node {Symbolic\\Equality} }
+            child { node {Material\\Equality} }
+            child { node {Productivity-\\Based\\Equality} }
+        }
+        child { node {Stability}
+            [sibling distance=6em] child { node {Restoration} }
+            child { node {Preservation} }
+        };
+    \end{tikzpicture}
+    \caption{\label{fig:decision-evaluation-criteria}A taxonomy of criteria for evaluating collective decision procedures \autocite[35]{Tideman2006}.}
+\end{figure}

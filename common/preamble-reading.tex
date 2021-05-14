@@ -1,0 +1,8 @@
+\newcounter{chapter}
+\include{common/preamble}
+\usepackage[explicit]{titlesec}
+% Suppress section numbering
+\titleformat{\section}{\bfseries\large}{}{1em}{#1}
+% Suppress chapter
+\newcommand{\chapter}[1]{}
+\usepackage{placeins}

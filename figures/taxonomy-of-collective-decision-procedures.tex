@@ -1,0 +1,68 @@
+
+
+\begin{figure}[t]
+    \centering
+    \begin{tikzpicture}[
+        %sibling distance=10em,
+        font=\small,
+        edge from parent path={(\tikzchildnode.north) -- ++(0,0.5cm)
+            -| (\tikzparentnode.south)},
+        level distance=1.75cm,
+        every node/.style = {
+            shape=rectangle, rounded corners,
+            draw=blue!75,
+            align=center,
+            top color=white,
+            bottom color=blue!20,
+            drop shadow}
+        ]
+
+        \draw (0,0) [sibling distance=15em] node {Collective Decision Procedures}
+            child { [sibling distance=5em, level distance=3.5cm] node (AOO) {Agreement on Outcome}
+                child[grow=down,xshift=-2.5cm] { [level distance=1.75cm] node {Consensus}
+                    child { node {Discovered\\Consensus} }
+                    child { node {Achieved\\Consensus} }
+                }
+                child[grow=down,xshift=1.9cm] { [level distance=1.75cm] node {Pseudo-consensus}
+                    child { node {Immediate\\Pseudo-\\consensus} }
+                    child { node {Achieved\\Pseudo-\\consensus} }
+                }
+                child[grow=down,xshift=6.15cm] { [level distance=1.75cm] node {Trade}
+                    child { node {Purchase} }
+                    child { node {Negotiated\\Exchange} }
+                }
+                child[grow=down,xshift=10.5cm] { [level distance=1.75cm] node {Extortion}
+                    child { node {Hold-up} }
+                    child { node {Treaty} }
+                }
+            }
+            child { [sibling distance=5em] node {Agreement on Procedure}
+                [edge from parent fork down]
+                child { node {Authority} }
+                child { node {Random\\Process} }
+                child { node {Voting} }
+                child { node {Contest} }
+            };
+%        \Tree
+%            [.{Collective Decision Procedures}
+%                [.{Agreement on Outcome}
+%                    [.{Consensus}
+%                        [.{Discovered\\Consensus} ]
+%                        [.{Achieved\\Consensus} ]
+%                    ]
+%                    [.{Pseudo-consensus}
+%                        [.{Immediate\\Pseudo-consensus} ]
+%                        [.{Achieved\\Pseudo-consensus} ]
+%                    ]
+%                ]
+%                [.{Agreement on Procedure}
+%                    [.Authority ]
+%                    [.{Random\\Process} ]
+%                    [.Voting ]
+%                    [.Contest ]
+%                ]
+%            ]
+
+    \end{tikzpicture}
+    \caption{\label{fig:ao-collective-decision-taxonomy}A taxonomy of collective decision procedures \autocite[14]{Tideman2006}.}
+\end{figure}

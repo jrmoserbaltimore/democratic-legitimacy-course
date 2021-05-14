@@ -1,0 +1,37 @@
+
+\begin{figure}[t]
+    \centering
+    \begin{tikzpicture}
+        % Put Compensation (Absent) at origin plus a little movement back.
+        % Square
+        \draw (3cm,1cm) node (Compensation) {Compensation}
+        (Compensation) ++(-3,0) node (CompensationAbsent) {}
+        ++(0,0.5) node {Absent}
+        (Compensation) ++(3,0) node (CompensationPresent) {}
+        ++(0,0.5) node {Present};
+
+
+        \draw (-2.5,0) ++(0,-2.5cm) node (Dissatisfaction) {Dissatisfaction}
+        (Dissatisfaction) ++(0,2.5cm) node (DissatisfactionAbsent) {Absent}
+        (Dissatisfaction) ++(0,-2.5) node (DissatisfactionPresent) {Present};
+
+        \foreach \x in {Compensation,Dissatisfaction}
+        \foreach \y in {Absent,Present}
+        {
+            \draw [->,>=latex] (\x) -- (\x\y);
+        }
+
+        \node (Box) at (0,0) {};
+
+        \draw (Box) node [align=center] (Consensus) {Consensus}
+        ++(6cm,0) node [align=center] (Trade) {Trade}
+        ++(0,-5cm) node[align=center] (Extortion) {Extortion}
+        ++(-6cm,0) node[align=center] (PConsensus) {Pseudo-\\consensus};
+
+        \foreach \x[remember=\x as \lastx (initially PConsensus)] in {Consensus,Trade,Extortion,PConsensus}
+        {
+            \draw (\lastx) -- (\x);
+        }
+    \end{tikzpicture}
+    \caption{\label{fig:ao-outcome-modes}Locations of modes in the agreement-on-outcome family \autocite[14]{Tideman2006}.}
+\end{figure}

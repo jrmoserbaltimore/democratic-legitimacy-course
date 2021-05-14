@@ -1,0 +1,109 @@
+\refstepcounter{syllabuslesson}
+\label{cur:majority}
+\section{Majority Rule and Preferential Voting\hyperref[syllabus]{↑}}
+
+\subsection{Assigned Reading}
+
+\begin{itemize}
+    \item Chapter 6 of the Handbook of Social Choice and Voting \autocite[83-99]{Heckelman2015}
+
+    \item Tocqueville on the tyranny of the majority \autocite{Tocqueville2010}
+\end{itemize}
+
+\subsection{Overview}
+
+\begin{todo}
+    Review this in context of the rest of the curriculum to make sure it's still carrying the right information.
+\end{todo}
+\begin{itemize}
+    \item Begin with discussion about who should be elected.  Important responses to draw out of the students are ``most votes'' and ``majority.''  A particular trap is ``the majority,'' which leads into a discussion about who has a majority.  Tocqueville is useful for triggering this.
+
+    \item Once the question of who has a majority is broached, explain preferential voting and ranked ballots $A\succ B\succ C$.  Use this to explain transitive preference:  a voter doesn't prefer their third choice to their first choice, or their fifth choice to their third choice.
+
+    \item Decompose ranked ballots into pairwise elections.  The students may arrive at this if asked what information can be derived from preferential ballots, but it's a lot of lateral thinking.  This can be seeded by asking what we know about pairs of candidates.
+    \begin{itemize}
+        \item Any two ranked candidates indicate a vote for the higher-ranked against the lower.
+
+        \item If a candidate wasn't ranked, they are obviously preferred less than ranked candidates:  what information does the last-ranked candidate convey otherwise?
+
+        \item For two unranked candidates, the voter hasn't voted in that election (this goes back to the ``disinterested voters aren't voters'' principle, and correctly not voting)
+    \end{itemize}
+
+    \item Move the discussion to tournament sets, bringing in the Condorcet winner.  This returns to the example used in the first day.
+    \begin{itemize}
+        \item We can imagine the Condorcet winner as a negotiated outcome bringing together the collective knowledge of the group, and an election as a form of public discourse.
+
+        \item The voters on each side form different majorities which agree some candidate, in this case Bobbie, is better than other candidates.  One subset of voters unanimously agrees Bobbie is better than Chris, and this group is a majority of all voters; another subset of voters unanimously agrees Bobbie is better than Alex, and this group is a majority of all voters. (Median Voter Theorem and Plott's Equilibrium Theorem)
+
+        \item The intersection of these majority coalitions acts as a type of negotiation, where voters preferring $a\succ b\succ x$ and voters preferring $e\succ d\succ x$ come together with voters preferring $x$ to each candidate to produce majority coalitions preferring $x$ to various other candidates.  Voters give ground until meeting in the middle, i.e. median voter theorem.
+
+        \item This intersection acts as a public discourse, factoring in all the information of the collectivity as a whole to find the group's decision.
+    \end{itemize}
+
+    \item Adjust the election as per \prettyref{ele:smith-set} and engage in the discussion here.  The Smith set indicates uncertainty between the three candidates as a group decision, and students may reason on this in any way they like.
+
+\end{itemize}
+
+\begin{boxcomment}
+    Interestingly, considering a majority of voters as a separate collectivity which unanimously agrees $x\succ a$, such collectivities do not unanimously agree $b\succ x$ if $x$ is the Condorcet winner.  These collectivities have not made a decision, as there is no agreed-upon procedure between them to make any decision and so it must be by unanimous consent.
+
+    Given the group of all majorities, every majority agrees $x$ should be elected rather than any candidate $y$, or else has no opinion between $x$ and $y$.  This may imply unanimous consent among the collectivity of majorities that $x$ is the correct action for the group.
+\end{boxcomment}
+
+\begin{figure}
+    \begin{election}
+        \singlespacing
+        \label{ele:smith-set}
+        Consider the below set of 100 preferential ballots:
+        \begin{itemize}
+            \item 26 Alex$\succ$Bobbie$\succ$Chris$\succ$Dane
+            \item 32 Bobbie$\succ$Chris$\succ$Alex$\succ$Dane
+            \item 30 Chris$\succ$Alex$\succ$Bobbie$\succ$Dane
+            \item 12 Dane$\succ$Alex$\succ$Bobbie$\succ$Chris
+        \end{itemize}
+
+        Pairwise, this breaks down into three elections:
+
+        \begin{itemize}
+            \item 68 Alex : 32 Bobbie
+            \item 70 Bobbie : 30 Chris
+            \item 62 Chris : 38 Alex
+            \item 88 Alex : 12 Dane
+            \item 88 Bobbie : 12 Dane
+            \item 88 Chris : 12 Dane
+        \end{itemize}
+
+        Alex, Bobbie, and Chris are undefeated by all other candidates, but are not undefeated by one another.  These make up the Simth set.
+    \end{election}
+\end{figure}
+
+%\subsection{Script}
+%
+%\begin{itemize}
+%    \item{Ranked Ballots and Majority Rule} [:30]
+%    \begin{itemize}
+%
+%        \item A brief review of ranked ballots and transitive preferences [:5?]
+%
+%        \item The Condorcet winner and the Smith set [:15?]
+%
+%        \item Median Voter Theorem and Plott's Majority Rule Equilibrium Theorem
+%    \end{itemize}
+%    \item Transitive individual preferences vs. intransitive group preferences [:5?]
+%    \begin{itemize}
+%            \item
+%    \end{itemize}
+%
+%\end{itemize}
+
+\begin{boxcomment}
+    The Income Effect is useful in explaining transitive versus intransitive preference.  I leave this until the Ethics and Welfare segment because it is much easier to handwave away that a bunch of people voted in some way than would be for social welfare.  Tideman's example is best left out of this discussion due to its complexity and the time constraints of a surprisingly large topic.
+\end{boxcomment}
+
+\begin{boxcomment}
+    This class pulls together the idea of consent, the public discourse, and Condorcet jury theorem.  The Median Voter Theorem and Smith-efficiency refine the prior argument regarding democracy converging to Rawls's veil of ignorance, and can be used to extend the discussion of women's political rights, slavery, and felony disenfranchisement.
+
+    The median voter can be demonstrated via the Condorcet winner, showing various majorities with varied beliefs intersecting at the candidate preferred by the median voter.  Removing voters from one side of this equilibrium causes the winner to shift away from them.  We can't possibly include the whole of the knowledge of a collectivity's members while excluding any members of that collectivity.  The concern with women's voting rights and negro slavery is obvious; felony disenfranchisement assumes society is correct in its criminal laws, and reinforces society's collective certainty on these laws by prohibiting from voting those who have demonstrated actionable disagreement.
+
+    Marijuana proves illustrative of society's reinforced collective certainty:  those convicted of felony possession of controlled substances are prohibited from voting, and yet decades later, cannibis legalization has become normalized.  One in four blacks cannot vote in Kentucky due to felony disenfranchisement.
+\end{boxcomment}

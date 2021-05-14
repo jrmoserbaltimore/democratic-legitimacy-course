@@ -1,0 +1,216 @@
+
+\chapter{Voting Rules}
+
+A voting rule describing a procedure to determine who is elected based on a set of ballots.  Voting rules may use single-mark, ranked, or scored ballots; and they may elect one or several candidates.
+
+\section{Single-Winner Rules}
+\subsection{Plurality and Approval}
+Plurality uses only first-order preferences to select a winner.  Whichever candidate gets the most votes wins.  Elections via plurality typically use single-mark ballots.
+
+Approval allows a ballot to provide one vote for each candidate, but not multiple votes for any candidate.  Again, the candidate with the most votes is elected.
+
+Neither method provides enough information to compute the Smith set.
+
+\subsection{Instant Runoff}
+
+Instant Runoff Voting (IRV), also called the Alternative Vote, uses ranked ballots to carry out a runoff cycle from one set of ballots.  Whenever no candidate is ranked first on a majority of ballots, considering all eliminated candidates as not ranked on any ballot, the candidate with the fewest such first-order votes is eliminated and the votes transferred to the next candidate on each ballot which was assigned to them.
+
+IRV can be made Smith-efficient as Smith/IRV, which eliminates all non-Smith candidates and then carries out IRV until a candidate has a majority; or Alternative Smith \autocite{GreenArmytage2011}, which in each round eliminates all non-Smith candidates and, if more than one remains, eliminates one as by IRV.
+
+IRV is not summable, and all ballots must be centrally counted.  Eliminations cannot begin until all ballots are available for counting, as small numbers of ballots may change the order of elimination and dramatically change the outcome.  This makes it difficult to use for large elections.
+
+\subsection{Ranked Pairs}
+
+Ranked Pairs \autocite{Tideman1987} is a Smith-efficient rule exhibiting a number of important characteristics, including independence of clones, independence of Smith-Dominated alternatives, and local independence of irrelevant alternatives.
+
+Ranked Pairs is summable, and can be computed incrementally as ballots are counted in a decentralized manner and pairwise vote counts are aggregated.  When counting by hand, candidates can first be reduced to the Smith Set to minimize the required effort without changing the outcome.
+
+\begin{enumerate}
+    \item Compute all pairwise win margins, these being $V_a-V_b$ for the election between $a$ and $b$ where $V_a>V_b$.
+
+    \item Order all pairwise elections by win margin in descending order.
+
+    \item Add each pairwise election to a graph in the given order, except that if adding the election would cause a cycle by which $a$ can follow a beatpath back to itself, discard that election.
+
+    \item After all pairwise elections have been added to the graph or discarded, elect the candidate with no defeats or ties shown on the graph.
+\end{enumerate}
+
+\subsection{Minimax}
+
+Minimax is a Condorcet but not Smith-efficient rule, which can be made Smith-efficient by as Smith/Minimax.  As with Ranked Pairs, both forms are summable.
+
+\begin{enumerate}
+    \item Compute all pairwise margins, these being $V_a-V_b$ for the election between $a$ and $b$ where $V_a>V_b$.
+
+    \item Assign all pairwise margins to the losing candidate as pairwise defeat margins, such that $V_a-V_b$ is assigned to $b$.
+
+    \item For each candidate, identify the largest pairwise defeat margin as that candidate's maximum pairwise defeat.
+
+    \item Elect the candidate with the smallest maximum pairwise defeat.
+\end{enumerate}
+
+In this way, the rule identifies the maximum defeat margin for each candidate, and elects the candidate with the minimum of the maximums.
+
+The largest defeat for the Condorcet winner is zero (no defeats), and so the Condorcet winner is always elected; however, it is possible for all members of the Smith set to defeat a candidate with no pairwise majorities—the Condorcet loser, who cannot win any election against any single candidate—and so elect the worst possible candidate.  Smith/Minimax removes all such candidates first, making the rule similar to Ranked Pairs:  even regular Minimax always elects from three the same candidate as Ranked Pairs, and nearly always between four.
+
+Neither Minimax nor Smith/Minimax are clone-independent.
+
+\subsection{Borda}
+
+The Borda rule uses implied scores based on ranking.  Borda is highly sensitive to the number of candidates, and so is easy to manipulate.  Its most important advantage, if it has any, is that it can reject a slim majority winner if that winner is least-favored by the whole minority, and instead elect a candidate who is strongly favored (e.g. ranked first or second) by all voters.  Its flaws make it easy to manipulate a weaker candidate into beating a majority by adding more irrelevant candidates, making this supposed advantage useless.
+
+Borda can be constrained as Smith/Borda, in which case it has the same supposed advantage when there is no Condorcet winner, and otherwise elects the Condorcet winner.  Borda is a summable method.
+
+\begin{enumerate}
+    \item For $n$ candidates, afford each candidate $n-r$ points for each ballot on which the candidate is placed at rank $r$; this is called the Borda Score.
+
+    \item Elect the candidate with the highest Borda score.
+\end{enumerate}
+
+As with Geller's STV-B, IRV can be modified into IRV-B, eliminating the candidate with the lowest Borda score each round; this does not make IRV summable, and may not provide much of any advantage.  Such a rule has not been well-explored.
+
+\section{Multi-Winner Rules}
+
+\subsection{Non-Proportional Rules}
+Non-proportional rules can allow lopsided representation.  Some are more prone to weaken large coalitions, while others are prone to weaken small coalitions.
+
+\subsubsection{Multiple Non-Transferable Vote}
+Multiple Non-Transferable Vote, or MNTV, allows voters to select up to $n$ candidates when electing $n$ winners.  As with approval, the votes are totaled and the top $n$ plurality winners are elected.
+
+MNTV favors cohesive solid coalitions.  When voters are split between many candidates, only the biggest groups of voters gain sole representation; often this is one minority group of voters largely voting for the same $n$ candidates.  In the United States, many states using MNTV to elect in multi-member districts elect candidates all from one party even when the party has only a slim majority.
+
+\subsubsection{Single Non-Transferable Vote}
+
+Single Non-Transferable Vote, or SNTV, works the same as MNTV, except each voter marks only one candidate.  Unlike MNTV, SNTV disfavors large and small coalitions.  When a large coalition is bigger than twice the size of the second- or third-largest coalition, that coalition can obtain more representation by splitting its votes.
+
+The Final Five election cycle uses SNTV to nominate five candidates for an IRV election.
+
+\subsubsection{Serial Rules}
+
+Any voting rule using ordered or scored candidates can be used as a serial rule.  Condorcet voting rules either produce a series of ordered winners or can be repeatedly run on the ballots with each winner eliminated until $n$ winners are identified.  Score-based rules such as Borda can simply take the top $n$ scores.  SNTV is serial plurality, and MNTV something similar to serial approval.
+
+Such approaches behave as the base rule.  Condorcet rules, for example, give all $n$ seats to the median voting coalition, whereas a proportional rule would give one seat to this coalition and one to each of similar sizes going out to either side.
+
+\subsection{Proportional Rules}
+
+Proportional rules elect proportional to voters.  Some elections attempt proportionality by allow voters to vote for parties, and then electing a number of candidates from each party.  Proportional voting rules find convergence between voter preferences for candidates and provide representation to similar-sized coalitions based on this.  The latter approach accounts for variations between voter ideals within the same party.
+
+\subsubsection{Meek STV}
+
+Meek-STV reference rule as per the PR Foundation \autocite{Lundell2010}.
+
+The rule is specified as fixed-point to nine decimal places of precision.  It uses $\omega = 10^{-6}$.
+
+\begin{enumerate}
+    \item \textbf{Initialize}.  For each candidates $C$, set the candidate's state $C_s$ to \textit{hopeful} and the candidate's keep factor to $C_k = 1$.
+
+    \item \textbf{Rounds}
+    \begin{enumerate}
+        \item \textbf{Test for completion}.  If all seats are filled or the number of \textit{elected} and \textit{hopeful} candidates together is less than or equal to the total number to elect, procede to step 3.
+
+        \item \textbf{Iterate}.
+        \begin{enumerate}
+            \item \textbf{Initialize distribution}.  For each ballot $B$, set ballot weight $B_w = 1$.  Set each candidate's vote count $C_v = 0$.
+
+            \item \textbf{Distribute votes}.  Distribute each ballot $B$ to all candidates in ranked order on the ballot, beginning with the first.
+            \begin{enumerate}
+                \item \textbf{Compute transfer}.  For the current candidate ranked, multiply $B_w \times C_k$, \textit{round up} to 9 decimal places.  This is the transfer $T$.
+
+                \item \textbf{Transfer vote}.  Add $T$ to the Candidate's vote count $C_v$.  Subtract $T$ from the ballot weight $B_w$.
+
+                \item \textbf{Iterate}.  If further candidates are ranked on the ballot, continue from 2(b)(ii)(A) for the next candidate on the ballot.
+
+                \item \textbf{Distribute next ballot}. If further uncounted ballots remain, return to step 2(b)(ii)(A) for the first candidate on the next ballot.
+            \end{enumerate}
+
+            \item \textbf{Update quota}.  Set quota $q$ to the sum of all votes received by all candidates, divided by one plus the number of seats to fill, truncated to 9 decimal places.
+
+            \item \textbf{Elect winners}.  Elect each candidate $C$ where $C_s$ is \textit{hopeful} and $C_v\geq q$, and set $C_s$ to \textit{elected} for those candidates elected.
+
+            \item \textbf{Calculate total surplus}.  Calculate surplus $s$ as the sum of all surpluses $C_v - q$ for all candidates elected; $s=0$ if this total is less than zero.
+
+            \item \textbf{Check if iteration finished}.
+            \begin{enumerate}
+                \item If step 2(b)(iv) elected a candidate, continue from step 2.
+
+                \item If $s<\omega$, continue at 2(b)(iii).
+
+                \item If this is not the first iteration, then if $s\geq s_{-1}$ where $s_{-1}$ was the surplus in the previous iteration, continue at 2(b)(iii)
+            \end{enumerate}
+            \item \textbf{Update keep factors}. For each \textit{elected} candidate $C$, Multiply $C_k\times q$, round up to 9 decimal places, and divide this by the candidate's vote total $C_v$.  Set $C_k$ to this value, rounded up to 9 decimal places.
+        \end{enumerate}
+        \item \textbf{Carry out defeats}.
+        \begin{enumerate}
+            \item \textbf{Identify elimination set}.  Find the largest set of \textit{hopeful} candidates meeting the below criteria.
+            \begin{enumerate}
+                \item All candidates with votes $C_v$ less than or equal to the candidate in the set having the most votes are also in the set.
+
+                \item The sum of the votes of all candidates in the set plus $s$ is less than the lowest vote count $C_v$ for any \textit{hopeful} candidate not in the set.
+            \end{enumerate}
+
+            \item If the elimination set is empty, set it to the candidate with the lowest vote count $C_v$.
+
+            \item Remove from the elimination set, in order from the candidate with the most votes to the least votes $C_v$, the minimum number of candidates necessary for the number of remaining \textit{hopeful} candidates to be greater than or equal to the number of unfilled seats.  Use a defined tie-breaking procedure if any ties occur in this step.
+
+            \item Mark the candidate state $C_s$ for all candidates in the elimination set as \textit{defeated}, breaking any tie.  Set the keep factor $C_k$ for each such candidate to 0.
+        \end{enumerate}
+
+        \item \textbf{Continue}.  Continue from step 2.
+
+    \end{enumerate}
+
+    \item \textbf{Count complete}.  If any seats are unfilled, elect all remaining \textit{hopeful} candidates; else defeat all remaining \textit{hopeful} candidates.
+\end{enumerate}
+
+The New Zealand implementation uses $\omega = 10^{-4}$
+
+The above is a highly-specific Meek rule which must be implemented exactly as described for an election claiming to follow this Meek rule to be valid.  This ensures fairness of elections by avoiding any discretion in parts of the rules of how the election is counted.
+
+\subsection{Meek-Geller STV}
+
+Chris Geller suggests STV-B, which modifies STV to eliminate by lowest Borda count \autocite{Geller2005}.  At each election, transfer values are recomputed; but Borda counts are not recomputed based on the partial vote transfer\footnote{I suggest it would make more sense if they were, to reduce the impact those ballots have on further eliminations.}.
+
+Meek's STV has a different feature:  upon elimination or election, subtract off any votes transferring to nowhere—i.e. any votes that have no further candidate on a ballot to receive them.  This reduces the quota as ballots are exhausted.
+
+Meek-Geller STV uses both of these features:  the vote transfers and quota are calculated by Meek's method, and the eliminations are based on the Borda scores.  This makes minority coalitions more likely to elect as a coalition after a larger coalition elects a candidate.  For example:  out of $\left\{A,B,C\right\}$, $A$ may move from the lowest Borda score to the highest, and so if $C$ were elected before then $C$ would be more likely to be elected if the quota were lower.
+
+STV-B and Meek-Geller are not well-studied.
+
+%Example
+%
+%32
+%11 ABC
+%9  BAC
+%12 CBA
+%
+%34 (append G for G')
+%7  DEF
+%13 EFD
+%14 FED
+%
+%34:
+%8  GHI
+%16 HIG
+%10 IHG
+%
+%STV:  A, E, H
+%
+%Borda: 9; B, E, H
+%
+%G' = 390 = 170+220
+%
+%H = 254 = 8*7 + 16*8 + 10*7
+%E = 251 = 7*7 + 13*8 + 14*7
+%F = 245 = 7*6 + 13*7 + 14*8
+%I = 240 = 8*6 + 16*7 + 10*8
+%B = 233 = 11*7 + 9*8 + 12*7
+%A = 223 = 11*8 + 9*7 + 12*6
+%G = 220 = 8*8 + 16*6 + 10*6
+%D = 218 = 7*8 + 13*6 + 14*6
+%C = 216 = 11*6 + 9*6 + 12*8
+%
+%
+%
+%STV eliminates D, G, and B first; however, B is favored above both A and C.  STV-B eliminates C, D, G, and A, leaving B with a quota of 25.  Meek-Geller STV adjusts the quota after B is elected.
+%
+%STV-B eliminates G first, whereas the G' example eliminates I first.  In both cases, in this example, the votes go to H, beating the quota of 25.  Meek-Geller reduces the quota to 22.76 after the election of B.
