@@ -1,0 +1,32 @@
+% vim: sw=4 ts=4 et
+
+\documentclass[twoside,titlepage,12pt,appendixprefix=true]{scrreprt}
+\usepackage{import}
+\subimport{../../common}{preamble}
+
+\addbibresource{../../bibtex/social-choice.bib}
+\addbibresource{../../bibtex/philosophy.bib}
+
+\doublespacing
+\begin{document}
+    \author{John Moser\thanks{john.moser@ubalt.edu}}
+
+    \title{Social Choice, Electoral Processes, and Democratic Legitimacy}
+    \subtitle{Research Report on Course Development}
+    \maketitle
+    \addtocounter{page}{-1}
+    \tableofcontents
+    \clearpage
+    \input{introduction}
+    \input{01-conception}
+    \subimport{../college-course}{curricula}
+    \appendix
+    \input{appendix-01-meeting-log}
+    \input{appendix-02-research-log}
+    \subimport{../college-course}{vote-rules}
+    \input{lessons-learned}
+    \printbibliography
+
+    \input{appendix}
+
+\end{document}

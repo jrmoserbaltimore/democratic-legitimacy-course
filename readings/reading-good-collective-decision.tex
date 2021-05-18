@@ -1,0 +1,22 @@
+% vim: sw=4 ts=4 et
+
+\documentclass[twoside,notitlepage,12pt,appendixprefix=true]{scrartcl}
+\usepackage{import}
+\subimport{../common}{preamble-reading}
+
+\addbibresource{../bibtex/social-choice.bib}
+\addbibresource{../bibtex/philosophy.bib}
+
+%\doublespacing
+\begin{document}
+    \author{John Moser\thanks{john.moser@ubalt.edu}}
+
+    \title{What is a Good Collective Decision?}
+    \subtitle{What do you really know?}
+    \maketitle
+
+    \input{knowledge-education}
+    \FloatBarrier
+    \printbibliography
+
+\end{document}

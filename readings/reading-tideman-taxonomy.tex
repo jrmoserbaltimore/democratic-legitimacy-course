@@ -1,11 +1,11 @@
 % vim: sw=4 ts=4 et
 
 \documentclass[twoside,notitlepage,12pt,appendixprefix=true]{scrartcl}
-\input{common/preamble-reading}
+\usepackage{import}
+\subimport{../common}{preamble-reading}
 
-\addbibresource{bibtex/social-choice.bib}
-\addbibresource{bibtex/philosophy.bib}
-
+\addbibresource{../bibtex/social-choice.bib}
+\addbibresource{../bibtex/philosophy.bib}
 %\doublespacing
 \begin{document}
     \author{John Moser\thanks{john.moser@ubalt.edu}}
@@ -14,7 +14,7 @@
     \subtitle{A Framework of Collective Decisions}
     \maketitle
 
-    \input{parts/appendix-taxonomy-procedures}
+    \input{tideman-taxonomy-procedures}
     \FloatBarrier
     \printbibliography
 

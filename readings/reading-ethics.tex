@@ -1,20 +1,21 @@
 % vim: sw=4 ts=4 et
 
 \documentclass[twoside,notitlepage,12pt,appendixprefix=true]{scrartcl}
-\input{common/preamble-reading}
+\usepackage{import}
+\subimport{../common}{preamble-reading}
 
-\addbibresource{bibtex/social-choice.bib}
-\addbibresource{bibtex/philosophy.bib}
+\addbibresource{../bibtex/social-choice.bib}
+\addbibresource{../bibtex/philosophy.bib}
 
 %\doublespacing
 \begin{document}
     \author{John Moser\thanks{john.moser@ubalt.edu}}
 
-    \title{What is a Good Collective Decision?}
-    \subtitle{What do you really know?}
+    \title{Ethics and Unanimous Consent}
+    \subtitle{When are laws ethical?}
     \maketitle
 
-    \input{parts/appendix-knowledge-education}
+    \input{ethics}
     \FloatBarrier
     \printbibliography
 

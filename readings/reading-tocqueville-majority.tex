@@ -1,10 +1,11 @@
 % vim: sw=4 ts=4 et
 
 \documentclass[twoside,notitlepage,12pt,appendixprefix=true]{scrartcl}
-\input{common/preamble-reading}
+\usepackage{import}
+\subimport{../common}{preamble-reading}
 
-\addbibresource{bibtex/social-choice.bib}
-\addbibresource{bibtex/philosophy.bib}
+\addbibresource{../bibtex/social-choice.bib}
+\addbibresource{../bibtex/philosophy.bib}
 
 %\doublespacing
 \begin{document}
@@ -15,7 +16,7 @@
     \subtitle{Chapter 7\\Of the Omnipotence of the Majority in the United States and its Effects}
     \maketitle
 
-    \input{parts/appendix-tocqueville-7-majority}
+    \input{tocqueville-7-majority}
     \FloatBarrier
     \printbibliography
 
