@@ -1,21 +1,32 @@
 % vim: sw=4 ts=4 et
 
-\documentclass[twoside,titlepage,12pt,appendixprefix=true]{scrreprt}
+\documentclass[twoside,titlepage,12pt,appendixprefix=true]{scrbook}
 \usepackage{import}
+\def\useglossary{}
 \subimport{../../common}{preamble}
 
+\usepackage{imakeidx}
 \addbibresource{../../bibtex/social-choice.bib}
 \addbibresource{../../bibtex/philosophy.bib}
+
+\makeglossaries
 
 \doublespacing
 \begin{document}
     \author{John Moser\thanks{john.moser@ubalt.edu}}
 
     \title{Social Choice, Electoral Processes, and Democratic Legitimacy}
-    \subtitle{Curricula Outline, WIP}
-
+    \subtitle{Common Curricula}
+    \maketitle[0]
+    \frontmatter
     \tableofcontents
+    \input {parts/introduction}
+    \mainmatter
     \input{curricula}
-    \printbibliography
+    \backmatter
+    \part{Supplemental Readings}
+    \appendix
     \subimport{../../readings}{omnibus}
+    \addcontentsline{toc}{section}{References}
+    \printbibliography[title=Bibliography,heading=bibintoc]
 \end{document}

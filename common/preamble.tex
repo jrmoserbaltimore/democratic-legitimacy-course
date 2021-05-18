@@ -21,6 +21,12 @@
 %\usepackage{caption}
 \usetikzlibrary{arrows,shapes.geometric,automata,calc,positioning,shadows,trees}
 
+\ifdefined\useglossary
+    \usepackage{glossaries}
+    \makeglossaries
+    \subimport{glossary}{glossary}
+\fi
+
 \usepackage{wrapfig}
 \usepackage[font={small,it}]{caption}
 

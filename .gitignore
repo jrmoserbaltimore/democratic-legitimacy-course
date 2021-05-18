@@ -4,6 +4,7 @@
 *.pdf
 # *.tex
 *.synctex
+*.synctex(busy)
 *.sav
 *.bak
 *.aux
@@ -15,3 +16,5 @@
 *.xml
 *.out
 *.toc
+*.glo
+*.ist
