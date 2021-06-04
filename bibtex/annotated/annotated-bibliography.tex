@@ -20,8 +20,8 @@
 ]{biblatex}
 
 % Annotations will be in bibtex/annotations/{entrykey}.tex
-\renewcommand*{\bibannotationprefix}{bibtex/annotations/}
-\renewcommand*{\bibabstractprefix}{bibtex/abstracts/}
+\renewcommand*{\bibannotationprefix}{annotations/}
+\renewcommand*{\bibabstractprefix}{abstracts/}
 % Page geometry
 \usepackage[
     letterpaper,
@@ -36,8 +36,8 @@
 \sloppy
 
 % Social choice theory references
-\addbibresource[label=social-choice]{bibtex/social-choice.bib}
-\addbibresource[label=philosophy]{bibtex/philosophy.bib}
+\addbibresource[label=social-choice]{../social-choice.bib}
+\addbibresource[label=philosophy]{../philosophy.bib}
 
 \defbibfilter{multi-member}{keyword={multi-member} or keyword={single transferable vote}}
 
