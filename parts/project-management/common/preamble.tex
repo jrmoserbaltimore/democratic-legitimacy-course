@@ -29,17 +29,31 @@
 }
 
 \newganttlinktype{st-st}{
-    \ganttsetstartanchor{on left=0.5}
-    \ganttsetendanchor{on left=0.5}
-    \draw [->,thick] (\xLeft, \yUpper)
-    -| (\xLeft - 0.5, \yLower)
-    -- (\xRight, \yLower);
+    \ganttsetstartanchor{west}
+    \ganttsetendanchor{west}
+    \ifdim \xLeft=\xRight%
+    {
+        \draw [/pgfgantt/link] (\xLeft,\yUpper) -| (-\ganttvalueof{link bulge},\yLower) -- (\xRight, \yLower);
+    }%
+    \else%
+    {
+        \ganttsetstartanchor{south west}
+        \draw [/pgfgantt/link] (\xLeft,\yUpper) |- (\xRight, \yLower);
+    }%
+    \fi
 }
 
 \newganttlinktype{fn-fn}{
-    \ganttsetstartanchor{on right=0.75}
-    \ganttsetendanchor{on right=0.5}
-    \draw [->,thick] (\xLeft, \yUpper)
-    -| (\xRight + 0.5, \yLower)
-    -- (\xRight, \yLower);
+    \ganttsetstartanchor{east}
+    \ganttsetendanchor{east}
+    \ifdim \xLeft<\xRight%
+    {
+        \ganttsetendanchor{north east}
+        \draw [/pgfgantt/link] (\xLeft,\yUpper) -| (\xRight, \yLower);
+    }
+    \else%
+    {
+        \draw [/pgfgantt/link] (\xLeft,\yUpper) -- (\xRight, \yUpper) -- ++(\ganttvalueof{link bulge},0) |- (\xRight, \yLower);
+    }%
+    \fi
 }
