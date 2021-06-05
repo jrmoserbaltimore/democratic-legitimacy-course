@@ -1,0 +1,29 @@
+% vim: sw=4 ts=4 et
+
+\documentclass[twoside,titlepage,12pt,appendixprefix=true,usenames,dvipsnames]{scrreprt}
+\usepackage{import}
+\subimport{../../common}{preamble}
+\input{common/preamble}
+
+\addbibresource{../../bibtex/social-choice.bib}
+\addbibresource{../../bibtex/philosophy.bib}
+
+%\doublespacing
+\begin{document}
+    \author{John Moser\thanks{john.moser@ubalt.edu}}
+
+    \title{Social Choice, Electoral Processes, and Democratic Legitimacy College Curriculum}
+    \subtitle{Project Management}
+    \maketitle
+    \addtocounter{page}{-1}
+    \tableofcontents
+    \clearpage
+    \subimport{wbs/}{wbs.tex}
+    \subimport{gantt/}{gant-charts.tex}
+
+
+ %   \input{lessons-learned}
+%    \printbibliography
+
+
+\end{document}

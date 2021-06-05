@@ -1,0 +1,63 @@
+\chapter{Lessons}
+
+\foreach \x in {{What is Social Choice},
+    {Education, Knowledge, History},
+    {Public Reason},
+    {Consent},
+    {Majority Rule},
+    {Ethics and Welfare},
+    {Representative Democracy},
+    {Single-Winner Voting Rules},
+    {Multi-Winner Voting Rules},
+    {Government Structure},
+    {Evaluating Decision Methods},
+    {Manipulating Elections},
+    {Investigating Propaganda}}
+{
+    \section{\x}
+    \resizebox{\textwidth}{!}{%
+        \begin{forest}
+            [\x, root,
+                [Project\\Management,
+                    level 2, for tree={grow'=0, folder},
+                    for children={level 3},
+                    [WBS]
+                    [Gantt Chart]
+                ]
+                [Review,
+                    level 2, for tree={grow'=0, folder},
+                    for children={level 3},
+                    [Summary,
+                        for children={level 4},
+                        [Content\\Summary]
+                        [Annotation\\Summary]
+                    ]
+                    [Source List]
+                    [Concept List]
+                    [Missing\\Information]
+                ]
+                [Planning,
+                    level 2, for tree={grow'=0, folder},
+                    for children={level 3},
+                    [Concept\\Summary]
+                    [Lesson Overview]
+                ]
+                [Research,
+                    level 2, for tree={grow'=0, folder},
+                    for children={level 3},
+                    [Compiled Sources]
+                    [Annotated\\Bibliography]
+                ]
+                [Content,
+                    level 2, for tree={grow'=0, folder},
+                    for children={level 3},
+                    [Overview]
+                    [Readings]
+                    [Lesson Flow]
+                    [Special Notes]
+                ]
+            ]
+    \end{forest}
+    }
+    \clearpage
+}
