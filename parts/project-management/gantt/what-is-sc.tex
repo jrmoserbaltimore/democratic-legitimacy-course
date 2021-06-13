@@ -1,0 +1,65 @@
+\section{What is Social Choice?}
+\begin{ganttchart}[
+    y unit title=0.4cm,
+    y unit chart=1cm,
+    vgrid,
+    time slot format=isodate-yearmonth,
+    time slot unit=month,
+    title/.append style={draw=none, fill=RoyalBlue!50!black},
+    title label font=\sffamily\bfseries\color{white},
+    title label node/.append style={below=-1.6ex},
+    title left shift=.05,
+    title right shift=-.05,
+    title height=1,
+    bar/.append style={draw=none, fill=blue!30},
+    bar height=.4,
+    bar label font=\normalsize\color{black!70},
+    group right shift=0,
+    group top shift=.6,
+    group height=.3,
+    group peaks height=.2,
+    bar incomplete/.append style={fill=Maroon},
+    group incomplete/.append style={fill=blue!70},
+    link/.style={-latex,line width=1.5pt,OliveGreen!40}
+    ]{2021-05}{2022-12}
+    \setganttlinklabel{s-s}{}
+    \setganttlinklabel{s-f}{}
+    \setganttlinklabel{f-s}{}
+    \setganttlinklabel{f-f}{}
+    \gantttitlecalendar{year, month} \\
+    \ganttgroup[progress=90, name=review]{Review}{2021-06}{2021-07} \\
+    \ganttgroup[progress=60]{Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=70, name=sumcontent]{Content Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=90, name=sumannotation]{Annotation Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=100, name=sourcelist]{Source List}{2021-07}{2021-07} \\
+    \ganttbar[progress=75, name=conceptlist]{Concept List}{2021-07}{2021-07} \\
+    \ganttbar[progress=50, name=missinginfo]{Missing Information}{2021-06}{2021-07} \\
+    \foreach \x[remember=\x as \lastx (initially sumcontent)] in {sumannotation,sourcelist,conceptlist,missinginfo}
+    {
+        \ganttlink[link type=f-f]{\lastx}{\x}
+    }
+
+    \ganttmilestone[name=revmilestone]{Review Complete}{2021-07} \\
+    \ganttlink{missinginfo}{revmilestone}
+
+    \ganttgroup[progress=0]{Planning}{2022-01}{2022-02} \\
+    \ganttbar[progress=0, name=plancm]{Concept Mapping}{2022-01}{2022-01} \\
+    \ganttbar[progress=0, name=planlo]{Lesson Overview}{2022-02}{2022-02} \\
+    \ganttlink{revmilestone}{plancm}
+    \ganttlink{plancm}{planlo}
+
+    \ganttmilestone[name=planmilestone]{Planning Complete}{2022-02} \\
+    \ganttlink{planlo}{planmilestone}
+
+    \ganttgroup[progress=0]{Research}{2022-03}{2022-05} \\
+    \ganttbar[progress=0, name=litreview]{Literature Review}{2022-03}{2022-05} \\
+    \ganttbar[progress=0, name=annotbib]{Annotated Bibliography}{2022-03}{2022-05} \\
+    \ganttlink{planmilestone}{litreview}
+
+    \ganttgroup[progress=0]{Content}{2022-06}{2022-09} \\
+    \ganttbar[progress=0, name=contlo]{Lesson Overview}{2022-06}{2022-09} \\
+    %    \ganttbar[progress=0, name=contrd]{Readings}{2022-06}{2022-09} \\
+    \ganttbar[progress=0, name=contlf]{Lesson Flow}{2022-06}{2022-09} \\
+    \ganttbar[progress=0, name=contnotes]{Special Notes}{2022-06}{2022-09} \\
+
+\end{ganttchart}
