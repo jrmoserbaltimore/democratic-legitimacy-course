@@ -1,4 +1,4 @@
-\section{Public Reason}
+\section{Electoral Manipulation}
 \begin{ganttchart}[
     y unit title=0.4cm,
     y unit chart=1cm,
@@ -27,13 +27,13 @@
     \setganttlinklabel{f-s}{}
     \setganttlinklabel{f-f}{}
     \gantttitlecalendar{year, month} \\
-    \ganttgroup[progress=95, name=review]{Review}{2021-06}{2021-09} \\
-    \ganttgroup[progress=95]{Summary}{2021-06}{2021-09} \\
-    \ganttbar[progress=100, name=sumcontent]{Content Summary}{2021-06}{2021-09} \\
-    \ganttbar[progress=100, name=sumannotation]{Annotation Summary}{2021-06}{2021-09} \\
-    \ganttbar[progress=90, name=sourcelist]{Source List}{2021-07}{2021-09} \\
-    \ganttbar[progress=20, name=conceptlist]{Concept List}{2021-07}{2021-09} \\
-    \ganttbar[progress=70, name=missinginfo]{Missing Information}{2021-06}{2021-09} \\
+    \ganttgroup[progress=0, name=review]{Review}{2021-06}{2021-07} \\
+    \ganttgroup[progress=0]{Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=0, name=sumcontent]{Content Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=0, name=sumannotation]{Annotation Summary}{2021-06}{2021-07} \\
+    \ganttbar[progress=0, name=sourcelist]{Source List}{2021-07}{2021-07} \\
+    \ganttbar[progress=0, name=conceptlist]{Concept List}{2021-07}{2021-07} \\
+    \ganttbar[progress=0, name=missinginfo]{Missing Information}{2021-06}{2021-07} \\
     \foreach \x[remember=\x as \lastx (initially sumcontent)] in {sumannotation,sourcelist,conceptlist,missinginfo}
     {
         \ganttlink[link type=f-f]{\lastx}{\x}
@@ -53,7 +53,7 @@
 
     \ganttgroup[progress=0]{Research}{2022-03}{2022-05} \\
     \ganttbar[progress=0, name=litreview]{Literature Review}{2022-03}{2022-05} \\
-    \ganttbar[progress=0, name=annotbib]{Annotated Bibliography}{2022-03}{2022-09} \\
+    \ganttbar[progress=0, name=annotbib]{Annotated Bibliography}{2022-03}{2022-05} \\
     \ganttlink{planmilestone}{litreview}
 
     \ganttgroup[progress=0]{Content}{2022-06}{2022-09} \\
